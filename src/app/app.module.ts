@@ -9,6 +9,7 @@ import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.co
 import { IndexComponent } from './index/index.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     CurriculumVitaeComponent,
     IndexComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

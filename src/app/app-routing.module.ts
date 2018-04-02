@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
 	{ path: '', component: IndexComponent, pathMatch: 'full' },
+	{ path: 'index', component: IndexComponent },
 	{ path: 'curriculum-vitae', component: CurriculumVitaeComponent },
 	{ path: 'about', component: AboutComponent },
 	{ path: 'login', component: LoginComponent },

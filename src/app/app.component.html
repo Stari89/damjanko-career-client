@@ -1,15 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<nav>
-  <a routerLink="/" routerLinkActive="active">Index</a>
-  <a routerLink="/curriculum-vitae" routerLinkActive="active">Curriculum Vitae</a>
-  <a routerLink="/about" routerLinkActive="active">About</a>
-  <a routerLink="/login" routerLinkActive="active">Login</a>
-  <a routerLink="/asdfyxcvwerdsfjkid" routerLinkActive="active">Page not found test</a>
-
-</nav>
+<header>
+  <app-navigation></app-navigation>
+</header>
+<main class="container">
 <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div class="container text-center">
+    <span class="text-muted">Made by DamjanKo &copy; 2018</span>
+  </div>
+</footer>
