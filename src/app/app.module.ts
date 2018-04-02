@@ -9,7 +9,8 @@ import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.co
 import { IndexComponent } from './index/index.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     IndexComponent,
     AboutComponent,
     LoginComponent,
-    NavigationComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

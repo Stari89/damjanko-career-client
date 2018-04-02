@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height="400" width="400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[]]></style></defs>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F7C351;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#F7D351;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <polygon points="200,0 400,60 360,320 200,400" style="fill:url(#grad);"/>
+  <polygon points="200,0 0,60 40,320 200,400" style="fill:url(#grad);"/>
+  <text x="45" y="250" style="fill: white; font-size: 200px; font-family: Arial;">D</text>
+  <text x="215" y="250" style="fill: white; font-size: 200px; font-family: Arial;">K</text>
+  Sorry, your browser does not support inline SVG.
+</svg>

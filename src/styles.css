@@ -32,7 +32,7 @@ body {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-body > app-root > .container {
+body main.container {
 	padding: 60px 15px;
 }
 
