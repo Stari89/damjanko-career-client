@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MasterBlankComponent } from './master-blank/master-blank.component';
 import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
-import { IndexComponent } from './index/index.component';
+import { ApplicationLetterComponent } from './application-letter/application-letter.component';
 import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
 import { AboutComponent } from './about/about.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -15,8 +15,8 @@ const routes: Routes = [
 		path: '',
 		component: MasterSignedInComponent,
 		children: [
-			{ path: '', component: IndexComponent, pathMatch: 'full' },
-			{ path: 'index', component: IndexComponent },
+			{ path: '', component: ApplicationLetterComponent, pathMatch: 'full' },
+			{ path: 'application-letter', component: ApplicationLetterComponent },
 			{ path: 'curriculum-vitae', component: CurriculumVitaeComponent },
 			{ path: 'about', component: AboutComponent }
 		]
@@ -38,4 +38,4 @@ const routes: Routes = [
 	exports: [RouterModule]
   })
   export class AppRoutingModule { }
-  export const routingComponents = [ MasterBlankComponent, IndexComponent, CurriculumVitaeComponent, AboutComponent, SignInComponent, PageNotFoundComponent ];
+  export const routingComponents = [ MasterBlankComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent, SignInComponent, PageNotFoundComponent ];

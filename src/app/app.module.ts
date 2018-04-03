@@ -6,7 +6,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
-import { IndexComponent } from './index/index.component';
+import { ApplicationLetterComponent } from './application-letter/application-letter.component';
 import { AboutComponent } from './about/about.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { FooterComponent } from './footer/footer.component';
@@ -20,7 +20,7 @@ import { MasterSignedInComponent } from './master-signed-in/master-signed-in.com
     AppComponent,
     PageNotFoundComponent,
     CurriculumVitaeComponent,
-    IndexComponent,
+    ApplicationLetterComponent,
     AboutComponent,
     SignInComponent,
     FooterComponent,
