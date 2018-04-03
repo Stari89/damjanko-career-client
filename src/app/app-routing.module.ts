@@ -6,7 +6,7 @@ import { MasterSignedInComponent } from './master-signed-in/master-signed-in.com
 import { IndexComponent } from './index/index.component';
 import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
 import { AboutComponent } from './about/about.component';
-import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -26,7 +26,7 @@ const routes: Routes = [
 		path: '',
 		component: MasterBlankComponent,
 		children: [
-			{ path: 'login', component: LoginComponent },
+			{ path: 'sign-in', component: SignInComponent },
 			{ path: "**", component: PageNotFoundComponent }
 		]
 	}
@@ -38,4 +38,4 @@ const routes: Routes = [
 	exports: [RouterModule]
   })
   export class AppRoutingModule { }
-  export const routingComponents = [ MasterBlankComponent, IndexComponent, CurriculumVitaeComponent, AboutComponent, LoginComponent, PageNotFoundComponent ];
+  export const routingComponents = [ MasterBlankComponent, IndexComponent, CurriculumVitaeComponent, AboutComponent, SignInComponent, PageNotFoundComponent ];
