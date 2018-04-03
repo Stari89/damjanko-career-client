@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { MasterBlankComponent } from './master-blank/master-blank.component';
+import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HeaderComponent } from './header/header.component';
     AboutComponent,
     LoginComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MasterBlankComponent,
+    MasterSignedInComponent
   ],
   imports: [
     BrowserModule,
