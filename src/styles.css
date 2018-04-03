@@ -1,11 +1,44 @@
-.bg-primary {
-	background-color: #F7C351;
+.bg-primary  {
+	background-color: #F7C351!important;
 }
 
-.bg-secondary {
-	background-color: #6B7A8F;
+.bg-secondary  {
+	background-color: #6B7A8F!important;
 }
 
+.bg-danger {
+	background-color: #DF7474!important;
+}
+
+.btn-primary {
+	background-color: #74ABCF!important;
+	border-color: #73ABCF!important;
+}
+
+.btn-primary:hover {
+	background-color: #74ABDF!important;
+	border-color: #73ABDF!important;
+}
+
+.btn-secondary {
+	background-color: #F7C351!important;
+	border-color: #F7C351!important;
+}
+
+.btn-secondary:hover {
+	background-color: #F7D351!important;
+	border-color: #F7D351!important;
+}
+
+.btn-danger {
+	background-color: #DF7474!important;
+	border-color: #DE7474!important;
+}
+
+.btn-danger:hover {
+	background-color: #CF7474!important;
+	border-color: #CE7474!important;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
