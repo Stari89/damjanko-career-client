@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-curriculum-vitae',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurriculumVitaeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("Curriculum Vitae - carrer.DamjanKo");
+  }
 
   ngOnInit() {
   }
