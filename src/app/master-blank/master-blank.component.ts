@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterBlankComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    (document.body.parentNode as HTMLElement).className = "html-root-blank";
+    document.body.className = "body-root-blank";
+   }
 
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    (document.body.parentNode as HTMLElement).className = "";
+    document.body.className = "";
+  }
 }
