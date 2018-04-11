@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterSignedInComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    (document.body.parentNode as HTMLElement).className = "html-root-signed-in";
+    document.body.className = "body-root-signed-in";
+   }
 
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    (document.body.parentNode as HTMLElement).className = "";
+    document.body.className = "";
+  }
 }
