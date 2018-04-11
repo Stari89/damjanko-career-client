@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
-
+/* components */
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MasterBlankComponent } from './master-blank/master-blank.component';
 import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
+
+/* services */
+import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { MasterSignedInComponent } from './master-signed-in/master-signed-in.com
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    RouteAuthenticationGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

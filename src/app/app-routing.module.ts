@@ -8,12 +8,14 @@ import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.co
 import { AboutComponent } from './about/about.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
 
 const routes: Routes = [
 	{
 		// sign-in-required routes
 		path: '',
 		component: MasterSignedInComponent,
+		canActivate: [ RouteAuthenticationGuardService ],
 		children: [
 			{ path: '', component: ApplicationLetterComponent, pathMatch: 'full' },
 			{ path: 'application-letter', component: ApplicationLetterComponent },
