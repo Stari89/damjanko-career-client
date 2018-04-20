@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 /* components */
 import { AppComponent } from './app.component';
@@ -16,6 +18,7 @@ import { MasterSignedInComponent } from './master-signed-in/master-signed-in.com
 
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
+import { AuthenticationService } from './authentication.service';
 
 
 @NgModule({
@@ -33,9 +36,12 @@ import { RouteAuthenticationGuardService } from './route-authentication-guard.se
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
+    AuthenticationService,
     RouteAuthenticationGuardService
   ],
   bootstrap: [AppComponent]
