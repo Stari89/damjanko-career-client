@@ -36,7 +36,7 @@ export class AuthenticationService {
   public isAuthenticated(): Promise<boolean> {
     let token = this.getToken();
     if (!token) {
-      return new Promise<boolean>((resolve) => resolve(false));
+      return new Promise<boolean>(resolve => resolve(false));
     }
     let promise = new Promise<boolean>(resolve => {
       this.http.get(`http://localhost:3001/authentication/`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
@@ -52,7 +52,29 @@ export class AuthenticationService {
     return promise;
   }
 
+  public isAdminAuthenticated(): Promise<boolean> {
+    let token = this.getToken();
+    if (!token) {
+      return new Promise<boolean>(resolve => resolve(false));
+    }
+    let promise = new Promise<boolean>(resolve => {
+      this.http.get(`http://localhost:3001/authentication/is-admin/`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+        .toPromise()
+        .then(
+          res => {
+            console.log(res);
+            resolve(true);
+          },
+          err => {
+            console.log(err);
+            resolve(false);
+          });
+    });
+    return promise;
+  }
+
   private saveToken(token: string): void {
+    console.log(token);
     localStorage.setItem(this.tokenKey, token);
     this.token = token;
   }

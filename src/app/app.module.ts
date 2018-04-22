@@ -19,6 +19,8 @@ import { MasterSignedInComponent } from './master-signed-in/master-signed-in.com
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
 import { AuthenticationService } from './authentication.service';
+import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { AuthenticationService } from './authentication.service';
     FooterComponent,
     HeaderComponent,
     MasterBlankComponent,
-    MasterSignedInComponent
+    MasterSignedInComponent,
+    MasterDashboardComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
