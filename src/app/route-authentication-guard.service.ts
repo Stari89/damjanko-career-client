@@ -25,13 +25,23 @@ export class RouteAuthenticationGuardService implements CanActivate {
       return promise;
     }
     if (route.component === MasterDashboardComponent) {
-      let promise = this.authentication.isAdminAuthenticated()
-        .then(isAdminAuthenticated => {
-          if (!isAdminAuthenticated) {
+      let promise = this.authentication.isAuthenticated()
+        .then(isAuthenticated => {
+          console.log('asdf ' + isAuthenticated);
+          if (!isAuthenticated) {
             this.router.navigateByUrl('/sign-in');
+            return isAuthenticated;
           }
-          return isAdminAuthenticated;
+          let promise = this.authentication.isAdminAuthenticated()
+            .then(isAdminAuthenticated => {
+              if (!isAdminAuthenticated) {
+                this.router.navigateByUrl('/unauthorized');
+              }
+              return isAdminAuthenticated;
+            });
+          return promise;
         });
+      return promise;
     }
   }
 }

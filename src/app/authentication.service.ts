@@ -73,6 +73,10 @@ export class AuthenticationService {
     return promise;
   }
 
+  public signout(): void {
+    this.destroyToken();
+  }
+
   private saveToken(token: string): void {
     console.log(token);
     localStorage.setItem(this.tokenKey, token);
@@ -84,5 +88,10 @@ export class AuthenticationService {
       this.token = localStorage.getItem(this.tokenKey);
     }
     return this.token;
+  }
+
+  private destroyToken(): void {
+    this.token = null;
+    localStorage.removeItem(this.tokenKey);
   }
 }

@@ -18,8 +18,11 @@
               <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/sign-in" routerLinkActive="active">Sign In</a>
-              </li>
+              <a class="nav-link" routerLink="/users" routerLinkActive="active">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="signout()" href="" routerLinkActive="active">Sign Out</a>
+            </li>
           </ul>
         </div>
       </div>

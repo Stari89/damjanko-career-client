@@ -21,6 +21,7 @@ import { RouteAuthenticationGuardService } from './route-authentication-guard.se
 import { AuthenticationService } from './authentication.service';
 import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { UsersComponent } from './users/users.component';
     MasterBlankComponent,
     MasterSignedInComponent,
     MasterDashboardComponent,
-    UsersComponent
+    UsersComponent,
+    UnauthorizedComponent
   ],
   imports: [
     BrowserModule,

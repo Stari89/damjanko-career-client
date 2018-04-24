@@ -11,6 +11,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { UsersComponent } from './users/users.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 const routes: Routes = [
 	{
@@ -40,6 +41,7 @@ const routes: Routes = [
 		component: MasterBlankComponent,
 		children: [
 			{ path: 'sign-in', component: SignInComponent },
+			{ path: 'unauthorized', component: UnauthorizedComponent },
 			{ path: "**", component: PageNotFoundComponent }
 		]
 	},
