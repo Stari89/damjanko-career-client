@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MasterBlankComponent } from './master-blank/master-blank.component';
+/* public components */
+import { MasterBlankComponent } from './components-public/master-blank/master-blank.component';
+import { SignInComponent } from './components-public/sign-in/sign-in.component';
+import { UnauthorizedComponent } from './components-public/unauthorized/unauthorized.component';
+import { PageNotFoundComponent } from './components-public/page-not-found/page-not-found.component';
+
 import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
 import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
 import { ApplicationLetterComponent } from './application-letter/application-letter.component';
 import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
 import { AboutComponent } from './about/about.component';
-import { SignInComponent } from './sign-in/sign-in.component';
 import { UsersComponent } from './users/users.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
-import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 const routes: Routes = [
 	{
-		// sign-in-required routes
+		// user (sign-in required) routes
 		path: '',
 		component: MasterSignedInComponent,
 		canActivate: [ RouteAuthenticationGuardService ],
@@ -27,7 +29,7 @@ const routes: Routes = [
 		]
 	},
 	{
-		// admin-sign-in-required routes
+		// admin (admin sign-in required) routes
 		path: '',
 		component: MasterDashboardComponent,
 		canActivate: [ RouteAuthenticationGuardService ],
@@ -36,7 +38,7 @@ const routes: Routes = [
 		]
 	},
 	{
-		// sign-in-not-required routes
+		// public (sign-in not required) routes
 		path: '',
 		component: MasterBlankComponent,
 		children: [
@@ -53,4 +55,4 @@ const routes: Routes = [
 	exports: [RouterModule]
   })
   export class AppRoutingModule { }
-  export const routingComponents = [ MasterBlankComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent, SignInComponent, PageNotFoundComponent ];
+//   export const routingComponents = [ MasterBlankComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent, SignInComponent, PageNotFoundComponent ];

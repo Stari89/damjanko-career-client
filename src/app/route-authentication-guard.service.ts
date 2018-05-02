@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
-import { MasterBlankComponent } from './master-blank/master-blank.component';
+import { MasterBlankComponent } from './components-public/master-blank/master-blank.component';
 import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
 import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
 
