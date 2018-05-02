@@ -60,4 +60,6 @@ const routes: Routes = [
 	exports: [RouterModule]
   })
   export class AppRoutingModule { }
-//   export const routingComponents = [ MasterBlankComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent, SignInComponent, PageNotFoundComponent ];
+  export const SignedInRoutingComponents = [ MasterSignedInComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent ];
+  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent ];
+  export const PublicRoutingComponents = [ MasterBlankComponent, SignInComponent, UnauthorizedComponent, PageNotFoundComponent ];

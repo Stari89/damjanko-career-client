@@ -2,17 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /* modules */
-import { AppRoutingModule/*, routingComponents*/ } from '../app-routing.module';
+import { AppRoutingModule, SignedInRoutingComponents } from '../app-routing.module';
 
 /* components */
-
-import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
-import { ApplicationLetterComponent } from './application-letter/application-letter.component';
-import { AboutComponent } from './about/about.component';
-
 
 @NgModule({
   imports: [
@@ -20,12 +14,9 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule
   ],
   declarations: [
-    CurriculumVitaeComponent,
-    ApplicationLetterComponent,
-    AboutComponent,
+    SignedInRoutingComponents,
     FooterComponent,
-    HeaderComponent,
-    MasterSignedInComponent
+    HeaderComponent
   ]
 })
 export class ComponentsSignedInModule { }

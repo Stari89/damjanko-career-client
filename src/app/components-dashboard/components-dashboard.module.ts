@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /* modules */
-import { AppRoutingModule/*, routingComponents*/ } from '../app-routing.module';
+import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing.module';
 
 /* components */
-import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
-import { UsersComponent } from './users/users.component';
 
 @NgModule({
   imports: [
@@ -14,8 +12,7 @@ import { UsersComponent } from './users/users.component';
     AppRoutingModule
   ],
   declarations: [
-    MasterDashboardComponent,
-    UsersComponent
+    DashboardRoutingComponents
   ]
 })
 export class ComponentsDashboardModule { }
