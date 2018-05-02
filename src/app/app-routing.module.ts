@@ -7,11 +7,13 @@ import { SignInComponent } from './components-public/sign-in/sign-in.component';
 import { UnauthorizedComponent } from './components-public/unauthorized/unauthorized.component';
 import { PageNotFoundComponent } from './components-public/page-not-found/page-not-found.component';
 
-import { MasterSignedInComponent } from './master-signed-in/master-signed-in.component';
+/* signed-in components */
+import { MasterSignedInComponent } from './components-signed-in/master-signed-in/master-signed-in.component';
+import { ApplicationLetterComponent } from './components-signed-in/application-letter/application-letter.component';
+import { CurriculumVitaeComponent } from './components-signed-in/curriculum-vitae/curriculum-vitae.component';
+import { AboutComponent } from './components-signed-in/about/about.component';
+
 import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
-import { ApplicationLetterComponent } from './application-letter/application-letter.component';
-import { CurriculumVitaeComponent } from './curriculum-vitae/curriculum-vitae.component';
-import { AboutComponent } from './about/about.component';
 import { UsersComponent } from './users/users.component';
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
 
