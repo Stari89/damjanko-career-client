@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /* public components */
-import { MasterBlankComponent } from './components-public/master-blank/master-blank.component';
-import { SignInComponent } from './components-public/sign-in/sign-in.component';
-import { UnauthorizedComponent } from './components-public/unauthorized/unauthorized.component';
-import { PageNotFoundComponent } from './components-public/page-not-found/page-not-found.component';
+import { MasterBlankComponent } from '../components-public/master-blank/master-blank.component';
+import { SignInComponent } from '../components-public/sign-in/sign-in.component';
+import { UnauthorizedComponent } from '../components-public/unauthorized/unauthorized.component';
+import { PageNotFoundComponent } from '../components-public/page-not-found/page-not-found.component';
 
 /* signed-in components */
-import { MasterSignedInComponent } from './components-signed-in/master-signed-in/master-signed-in.component';
-import { ApplicationLetterComponent } from './components-signed-in/application-letter/application-letter.component';
-import { CurriculumVitaeComponent } from './components-signed-in/curriculum-vitae/curriculum-vitae.component';
-import { AboutComponent } from './components-signed-in/about/about.component';
+import { MasterSignedInComponent } from '../components-signed-in/master-signed-in/master-signed-in.component';
+import { ApplicationLetterComponent } from '../components-signed-in/application-letter/application-letter.component';
+import { CurriculumVitaeComponent } from '../components-signed-in/curriculum-vitae/curriculum-vitae.component';
+import { AboutComponent } from '../components-signed-in/about/about.component';
 
 /* dashboard components */
-import { MasterDashboardComponent } from './components-dashboard/master-dashboard/master-dashboard.component';
-import { UsersComponent } from './components-dashboard/users/users.component';
+import { MasterDashboardComponent } from '../components-dashboard/master-dashboard/master-dashboard.component';
+import { UsersComponent } from '../components-dashboard/users/users.component';
 
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
@@ -56,8 +56,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule]
+	imports: [ RouterModule.forRoot(routes) ],
+	exports: [ RouterModule ],
+	providers: [ RouteAuthenticationGuardService ]
   })
   export class AppRoutingModule { }
   export const SignedInRoutingComponents = [ MasterSignedInComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent ];

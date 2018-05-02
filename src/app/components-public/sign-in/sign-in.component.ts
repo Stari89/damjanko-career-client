@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
-import { AuthenticationService } from '../../authentication.service';
 import { Router } from '@angular/router';
+
+/* services */
+import { AuthenticationService } from '../../career-api/authentication.service';
 
 @Component({
   selector: 'app-sign-in',

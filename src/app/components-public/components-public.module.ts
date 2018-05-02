@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 /* modules */
-import { AppRoutingModule, PublicRoutingComponents } from '../app-routing.module';
+import { AppRoutingModule, PublicRoutingComponents } from '../app-routing/app-routing.module';
 
 /* components */
 

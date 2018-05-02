@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /* modules */
-import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing.module';
+import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing/app-routing.module';
 
 /* components */
 

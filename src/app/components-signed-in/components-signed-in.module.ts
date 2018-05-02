@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /* modules */
-import { AppRoutingModule, SignedInRoutingComponents } from '../app-routing.module';
+import { AppRoutingModule, SignedInRoutingComponents } from '../app-routing/app-routing.module';
 
 /* components */
 import { HeaderComponent } from './header/header.component';

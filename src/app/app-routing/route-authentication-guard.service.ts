@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { AuthenticationService } from './authentication.service';
-import { MasterBlankComponent } from './components-public/master-blank/master-blank.component';
-import { MasterSignedInComponent } from './components-signed-in/master-signed-in/master-signed-in.component';
-import { MasterDashboardComponent } from './components-dashboard/master-dashboard/master-dashboard.component';
+
+/* services */
+import { AuthenticationService } from '../career-api/authentication.service';
+
+/* components */
+import { MasterBlankComponent } from '../components-public/master-blank/master-blank.component';
+import { MasterSignedInComponent } from '../components-signed-in/master-signed-in/master-signed-in.component';
+import { MasterDashboardComponent } from '../components-dashboard/master-dashboard/master-dashboard.component';
 
 @Injectable()
 export class RouteAuthenticationGuardService implements CanActivate {
