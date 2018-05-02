@@ -3,7 +3,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { AuthenticationService } from './authentication.service';
 import { MasterBlankComponent } from './components-public/master-blank/master-blank.component';
 import { MasterSignedInComponent } from './components-signed-in/master-signed-in/master-signed-in.component';
-import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
+import { MasterDashboardComponent } from './components-dashboard/master-dashboard/master-dashboard.component';
 
 @Injectable()
 export class RouteAuthenticationGuardService implements CanActivate {

@@ -6,32 +6,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule/*, routingComponents*/ } from './app-routing.module';
 import { ComponentsPublicModule } from './components-public/components-public.module';
 import { ComponentsSignedInModule } from './components-signed-in/components-signed-in.module';
+import { ComponentsDashboardModule } from './components-dashboard/components-dashboard.module';
 
 /* components */
 import { AppComponent } from './app.component';
 
-
-import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
-
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
 import { AuthenticationService } from './authentication.service';
-import { UsersComponent } from './users/users.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MasterDashboardComponent,
-    UsersComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ComponentsPublicModule,
-    ComponentsSignedInModule
+    ComponentsSignedInModule,
+    ComponentsDashboardModule
   ],
   providers: [
     AuthenticationService,

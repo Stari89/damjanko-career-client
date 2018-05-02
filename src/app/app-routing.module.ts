@@ -13,8 +13,11 @@ import { ApplicationLetterComponent } from './components-signed-in/application-l
 import { CurriculumVitaeComponent } from './components-signed-in/curriculum-vitae/curriculum-vitae.component';
 import { AboutComponent } from './components-signed-in/about/about.component';
 
-import { MasterDashboardComponent } from './master-dashboard/master-dashboard.component';
-import { UsersComponent } from './users/users.component';
+/* dashboard components */
+import { MasterDashboardComponent } from './components-dashboard/master-dashboard/master-dashboard.component';
+import { UsersComponent } from './components-dashboard/users/users.component';
+
+/* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
 
 const routes: Routes = [
