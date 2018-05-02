@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 export interface TokenResponse {
   message: string;
@@ -13,12 +14,14 @@ export interface TokenResponse {
 export class AuthenticationService {
   private readonly tokenKey: string = 'damjanko_career_token';
   private token: string;
+  private authenticationEndpoint: string = `${environment.careerApiEndpointUrl}authentication/`;
+  private isAdminEndpoint: string = `${environment.careerApiEndpointUrl}authentication/is-admin/`;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   public authenticate(password: string): Promise<boolean> {
     let promise = new Promise<boolean>(resolve => {
-      this.http.post<TokenResponse>(`http://localhost:3001/authentication/`, { "password": password })
+      this.http.post<TokenResponse>(this.authenticationEndpoint, { "password": password })
         .toPromise()
         .then(
           res => {
@@ -39,7 +42,7 @@ export class AuthenticationService {
       return new Promise<boolean>(resolve => resolve(false));
     }
     let promise = new Promise<boolean>(resolve => {
-      this.http.get(`http://localhost:3001/authentication/`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+      this.http.get(this.authenticationEndpoint, { headers: { Authorization: `Bearer ${this.getToken()}` }})
         .toPromise()
         .then(
           res => {
@@ -58,7 +61,7 @@ export class AuthenticationService {
       return new Promise<boolean>(resolve => resolve(false));
     }
     let promise = new Promise<boolean>(resolve => {
-      this.http.get(`http://localhost:3001/authentication/is-admin/`, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+      this.http.get(this.isAdminEndpoint, { headers: { Authorization: `Bearer ${this.getToken()}` }})
         .toPromise()
         .then(
           res => {
