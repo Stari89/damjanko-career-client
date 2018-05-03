@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 /* services */
 import { AuthenticationService } from './authentication.service';
+import { UsersService } from './users.service';
+import { ApiRequestService } from './api-request.service';
+import { JwtStorageService } from './jwt-storage.service';
 
 @NgModule({
   imports: [
@@ -10,7 +13,10 @@ import { AuthenticationService } from './authentication.service';
   ],
   declarations: [],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    UsersService,
+    ApiRequestService,
+    JwtStorageService
   ]
 })
 export class CareerApiModule { }

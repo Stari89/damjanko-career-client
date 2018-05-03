@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environment';
+import { ApiRequestService } from './api-request.service';
+import { JwtStorageService } from './jwt-storage.service';
 
 export interface TokenResponse {
   message: string;
@@ -12,20 +12,18 @@ export interface TokenResponse {
 
 @Injectable()
 export class AuthenticationService {
-  private readonly tokenKey: string = 'damjanko_career_token';
-  private token: string;
-  private authenticationEndpoint: string = `${environment.careerApiEndpointUrl}authentication/`;
-  private isAdminEndpoint: string = `${environment.careerApiEndpointUrl}authentication/is-admin/`;
+  private authenticationEndpoint: string = 'authentication/';
+  private isAdminEndpoint: string = 'authentication/is-admin/';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private apiRequest: ApiRequestService, private jwtStorage: JwtStorageService, private router: Router) { }
 
   public authenticate(password: string): Promise<boolean> {
     let promise = new Promise<boolean>(resolve => {
-      this.http.post<TokenResponse>(this.authenticationEndpoint, { "password": password })
+      this.apiRequest.postUnauthenticated<TokenResponse>(this.authenticationEndpoint, { "password": password })
         .toPromise()
         .then(
           res => {
-            this.saveToken(res.token);
+            this.jwtStorage.saveToken(res.token);
             resolve(true);
           },
           err =>{
@@ -37,12 +35,12 @@ export class AuthenticationService {
   }
 
   public isAuthenticated(): Promise<boolean> {
-    let token = this.getToken();
+    let token = this.jwtStorage.getToken();
     if (!token) {
       return new Promise<boolean>(resolve => resolve(false));
     }
     let promise = new Promise<boolean>(resolve => {
-      this.http.get(this.authenticationEndpoint, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+      this.apiRequest.get(this.authenticationEndpoint)
         .toPromise()
         .then(
           res => {
@@ -56,20 +54,18 @@ export class AuthenticationService {
   }
 
   public isAdminAuthenticated(): Promise<boolean> {
-    let token = this.getToken();
+    let token = this.jwtStorage.getToken();
     if (!token) {
       return new Promise<boolean>(resolve => resolve(false));
     }
     let promise = new Promise<boolean>(resolve => {
-      this.http.get(this.isAdminEndpoint, { headers: { Authorization: `Bearer ${this.getToken()}` }})
+      this.apiRequest.get(this.isAdminEndpoint)
         .toPromise()
         .then(
           res => {
-            console.log(res);
             resolve(true);
           },
           err => {
-            console.log(err);
             resolve(false);
           });
     });
@@ -77,24 +73,6 @@ export class AuthenticationService {
   }
 
   public signout(): void {
-    this.destroyToken();
-  }
-
-  private saveToken(token: string): void {
-    console.log(token);
-    localStorage.setItem(this.tokenKey, token);
-    this.token = token;
-  }
-
-  private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem(this.tokenKey);
-    }
-    return this.token;
-  }
-
-  private destroyToken(): void {
-    this.token = null;
-    localStorage.removeItem(this.tokenKey);
+    this.jwtStorage.destroyToken();
   }
 }

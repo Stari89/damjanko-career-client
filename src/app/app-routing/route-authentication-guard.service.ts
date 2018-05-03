@@ -31,7 +31,6 @@ export class RouteAuthenticationGuardService implements CanActivate {
     if (route.component === MasterDashboardComponent) {
       let promise = this.authentication.isAuthenticated()
         .then(isAuthenticated => {
-          console.log('asdf ' + isAuthenticated);
           if (!isAuthenticated) {
             this.router.navigateByUrl('/sign-in');
             return isAuthenticated;
