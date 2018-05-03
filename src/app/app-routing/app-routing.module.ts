@@ -16,6 +16,8 @@ import { AboutComponent } from '../components-signed-in/about/about.component';
 /* dashboard components */
 import { MasterDashboardComponent } from '../components-dashboard/master-dashboard/master-dashboard.component';
 import { UsersComponent } from '../components-dashboard/users/users.component';
+import { ArticlesComponent } from '../components-dashboard/articles/articles.component';
+import { CodeListsComponent } from '../components-dashboard/code-lists/code-lists.component';
 
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
@@ -39,7 +41,9 @@ const routes: Routes = [
 		component: MasterDashboardComponent,
 		canActivate: [ RouteAuthenticationGuardService ],
 		children: [
-			{ path: 'users', component: UsersComponent }
+			{ path: 'users', component: UsersComponent },
+			{ path: 'articles', component: ArticlesComponent },
+			{ path: 'code-lists', component: CodeListsComponent }
 		]
 	},
 	{
@@ -62,5 +66,5 @@ const routes: Routes = [
   })
   export class AppRoutingModule { }
   export const SignedInRoutingComponents = [ MasterSignedInComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent ];
-  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent ];
+  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, CodeListsComponent ];
   export const PublicRoutingComponents = [ MasterBlankComponent, SignInComponent, UnauthorizedComponent, PageNotFoundComponent ];
