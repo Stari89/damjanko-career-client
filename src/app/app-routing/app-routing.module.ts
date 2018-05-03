@@ -18,6 +18,7 @@ import { MasterDashboardComponent } from '../components-dashboard/master-dashboa
 import { UsersComponent } from '../components-dashboard/users/users.component';
 import { ArticlesComponent } from '../components-dashboard/articles/articles.component';
 import { CodeListsComponent } from '../components-dashboard/code-lists/code-lists.component';
+import { ApplicationsComponent } from '../components-dashboard/applications/applications.component';
 
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
@@ -41,6 +42,7 @@ const routes: Routes = [
 		component: MasterDashboardComponent,
 		canActivate: [ RouteAuthenticationGuardService ],
 		children: [
+			{ path: 'applications', component: ApplicationsComponent},
 			{ path: 'users', component: UsersComponent },
 			{ path: 'articles', component: ArticlesComponent },
 			{ path: 'code-lists', component: CodeListsComponent }

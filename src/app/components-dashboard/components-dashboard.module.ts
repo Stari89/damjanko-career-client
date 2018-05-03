@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { CodeListsComponent } from './code-lists/code-lists.component';
+import { ApplicationsComponent } from './applications/applications.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { CodeListsComponent } from './code-lists/code-lists.component';
     HeaderComponent,
     SidebarComponent,
     ArticlesComponent,
-    CodeListsComponent
+    CodeListsComponent,
+    ApplicationsComponent
   ]
 })
 export class ComponentsDashboardModule { }
