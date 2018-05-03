@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../career-api/users.service';
+import { UsersService, User } from '../../career-api/users.service';
 
 @Component({
   selector: 'app-users',
@@ -7,13 +7,18 @@ import { UsersService } from '../../career-api/users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  public users: User[] = [];
+  public errorMessage;
 
-  constructor(private users: UsersService) { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-    this.users.getUsers().subscribe(users => {
-      console.log(users);
-    });
+    this.usersService.getUsers().subscribe(
+      usersResponse => {
+        this.users = usersResponse.users;
+      },
+      error => this.errorMessage = error
+    );
   }
 
 }
