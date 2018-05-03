@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing/app-routing.module';
 
 /* components */
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -12,7 +14,9 @@ import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing/app
     AppRoutingModule
   ],
   declarations: [
-    DashboardRoutingComponents
+    DashboardRoutingComponents,
+    HeaderComponent,
+    SidebarComponent
   ]
 })
 export class ComponentsDashboardModule { }

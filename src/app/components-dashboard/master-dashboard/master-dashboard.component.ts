@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    (document.body.parentNode as HTMLElement).className = "html-root-dashboard";
+    document.body.className = "body-root-dashboard";
+  }
 
   ngOnInit() {
   }
 
+  ngOnDestroy() {
+    (document.body.parentNode as HTMLElement).className = "";
+    document.body.className = "";
+  }
 }

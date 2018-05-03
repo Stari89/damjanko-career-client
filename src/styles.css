@@ -60,6 +60,19 @@
     background-color: #f5f5f5;
 }
 
+.body-root-dashboard {
+	font-size: .875rem;
+}
+
+.body-root-dashboard .feather {
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+}
+
+.body-root-dashboard .border-top { border-top: 1px solid #e5e5e5; }
+.body-root-dashboard .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
