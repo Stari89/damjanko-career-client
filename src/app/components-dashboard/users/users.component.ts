@@ -7,8 +7,8 @@ import { UsersService, User } from '../../career-api/users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  public users: User[] = [];
-  public errorMessage;
+  private users: User[];
+  private errorMessage;
 
   constructor(private usersService: UsersService) { }
 

@@ -40,6 +40,18 @@
 	border-color: #CE7474!important;
 }
 
+/* validation */
+
+.form-control.invalid {
+	border-color: #DE7474;
+}
+
+.invalid-feedback {
+	display: block;
+}
+
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 

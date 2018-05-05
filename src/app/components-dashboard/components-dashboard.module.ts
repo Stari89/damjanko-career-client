@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 /* modules */
 import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing/app-routing.module';
@@ -14,7 +15,8 @@ import { ApplicationsComponent } from './applications/applications.component';
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   declarations: [
     DashboardRoutingComponents,

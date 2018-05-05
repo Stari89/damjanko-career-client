@@ -1,0 +1,80 @@
+<div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+  <h1 class="h2">{{user.name}}</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button
+      (click)="onSubmit(false)"
+      class="btn btn-sm btn-primary"
+      name="save"
+      [attr.disabled]="!name.valid || !password.valid ? 'disabled' : null">
+      Save
+    </button>
+    <button
+    (click)="onSubmit(true)"
+    class="btn btn-sm btn-default"
+    name="saveAndClose"
+    [attr.disabled]="!name.valid || !password.valid ? 'disabled' : null">
+    Save and close
+  </button>
+  <button
+  class="btn btn-sm btn-default"
+  routerLink="/users">
+  Cancel
+</button>
+</div>
+<div class="btn-group mr-2">
+  <button
+  (click)="delete()"
+  class="btn btn-sm btn-danger"
+  [attr.disabled]="mode === 'update' ? null : 'disabled'">
+  Delete user
+</button>
+</div>
+</div>
+</div>
+<div class="container p-0 m-0">
+  <form name="user-form">
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input
+        id="name"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="user.name"
+        type="text"
+        placeholder="Username"
+        class="form-control"
+        [ngClass]="{ 'invalid': name.touched && !name.valid }"
+        required 
+        minlength="3">
+      <div class="invalid-feedback" *ngIf="name.touched && !name.valid">
+        <div *ngIf="name.errors.required">Name is required.</div>
+        <div *ngIf="name.errors.minlength">Name is minimum {{ name.errors.minlength.requiredLength }} characters long.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">
+        <span *ngIf="mode === 'update'">Update p</span><span *ngIf="mode === 'insert'">P</span>assphrase
+      </label>
+      <input
+        id="password"
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="user.password"
+        type="password"
+        placeholder="Passphrase"
+        class="form-control"
+        required>
+      <div class="invalid-feedback" *ngIf="password.touched && !password.valid">
+        <div *ngIf="password.errors.required">Passphrase is required.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select id="role" name="role" class="form-control" [(ngModel)]="user.role">
+        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+      </select>
+    </div>
+  </form>
+</div>

@@ -4,6 +4,11 @@ import { Observable } from 'rxjs/Observable';
 import { JwtStorageService } from './jwt-storage.service';
 import { environment } from '../../environments/environment';
 
+export interface UpdateProperty {
+  propName: string;
+  value: any;
+}
+
 @Injectable()
 export class ApiRequestService {
   private careerApiEndpointUrl: string = environment.careerApiEndpointUrl;
@@ -15,9 +20,27 @@ export class ApiRequestService {
   public get<T>(endpoint: string): Observable<T> {
     return this.http.get<T>(
       this.getCompleteEndpointUrl(endpoint),
-      {
-        headers: { Authorization: `Bearer ${this.jwtStorage.getToken()}` }
-      });
+      this.getHeaders());
+  }
+
+  public post<T>(endpoint: string, data: any): Observable<T> {
+    return this.http.post<T>(
+      this.getCompleteEndpointUrl(endpoint),
+      data,
+      this.getHeaders());
+  }
+
+  public patch<T>(endpoint: string, data: any): Observable<T> {
+    return this.http.patch<T>(
+      this.getCompleteEndpointUrl(endpoint),
+      data,
+      this.getHeaders());
+  }
+
+  public delete<T>(endpoint: string): Observable<T> {
+    return this.http.delete<T>(
+      this.getCompleteEndpointUrl(endpoint),
+      this.getHeaders());
   }
 
   /* Unauthenticated calls */
@@ -37,5 +60,11 @@ export class ApiRequestService {
       throw new Error('Career Api Endpoint Url is null or empty');
     }
     return `${this.careerApiEndpointUrl}${endpoint}`;
+  }
+
+  private getHeaders() {
+    return {
+      headers: { Authorization: `Bearer ${this.jwtStorage.getToken()}` }
+    };
   }
 }
