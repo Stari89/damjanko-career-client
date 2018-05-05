@@ -11,8 +11,9 @@ import { AuthenticationService } from '../../career-api/authentication.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
-  password: string;
+  public errorMessage;
+  public password: string;
+  private unsuccessfulSigninMessage: string = 'Sign-in unsuccessful.'
 
   constructor(private titleService:Title, private router: Router, private authentication: AuthenticationService) {
     this.titleService.setTitle("Sign In - carrer.DamjanKo");
@@ -27,8 +28,11 @@ export class SignInComponent implements OnInit {
         if (authenticated) {
           this.router.navigateByUrl('/');
         } else {
-
+          this.errorMessage = this.unsuccessfulSigninMessage;
         }
+      })
+      .catch(error => {
+        this.errorMessage = this.unsuccessfulSigninMessage;
       });
   }
 

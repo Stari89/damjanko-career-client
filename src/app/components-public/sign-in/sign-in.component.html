@@ -5,11 +5,12 @@
     <label for="inputPassword" class="sr-only">Passphrase</label>
     <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Passphrase" required autofocus="" [(ngModel)]="password">
     <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <div class="invalid-feedback" *ngIf="errorMessage != null">{{ errorMessage }}</div>
       <p class="mt-5 mb-3 text-muted">DamjanKo &copy; 2018</p>
   </form>
 </div>
