@@ -9,10 +9,10 @@ import { UsersService, User } from '../../career-api/users.service';
 })
 export class UserComponent implements OnInit {
   private userId: string;
-  private user: User = { role: 'user' } as User;
-  private errorMessage;
-  private roles = [ 'user', 'admin' ];
-  private mode: string;
+  public user: User = { role: 'user' } as User;
+  public errorMessage;
+  public roles = [ 'user', 'admin' ];
+  public mode: string;
 
   constructor(private activatedRoute: ActivatedRoute, private usersService: UsersService, private router: Router) { }
 
