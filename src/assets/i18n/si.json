@@ -1,13 +1,33 @@
 {
     "DASHBOARD": {
-        "APPLICATIONS" : { },
-        "ARTICLES" : { },
-        "CODE-LISTS" : { },
-        "HEADER" : { },
+        "APPLICATIONS" : {
+            "TITLE" : "Vloge za delo - career.DamjanKo"
+         },
+        "ARTICLES" : {
+            "TITLE" : "Članki - career.DamjanKo"
+        },
+        "CODE-LISTS" : {
+            "TITLE" : "Šifranti - career.DamjanKo"
+        },
+        "HEADER" : {
+            "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
+            "SIGN-OUT" : "Izpiši me"
+        },
         "MASTER-DASHBOARD" : { },
-        "SIDEBAR" : { },
-        "USER" : { },
-        "USERS" : { }
+        "SIDEBAR" : {
+            "DASHBOARD" : "Nadzorna plošča",
+            "APPLICATIONS" : "Vloge za delo",
+            "ARTICLES" : "Članki",
+            "SETTINGS" : "Nastavitve",
+            "USERS" : "Uporabniki",
+            "CODE-LISTS" : "Šifranti"
+         },
+        "USER" : {
+            "TITLE" : "Uporabnik - career.DamjanKo"
+        },
+        "USERS" : {
+            "TITLE" : "Uporabniki - career.DamjanKo"
+        }
     },
     "PUBLIC" : {
         "MASTER-BLANK" : { },

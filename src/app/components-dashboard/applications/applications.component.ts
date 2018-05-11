@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-applications',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private translate: TranslateService,
+    private titleService: Title
+  ) { }
 
   ngOnInit() {
+    this.translate.get('DASHBOARD.APPLICATIONS.TITLE').subscribe((res: string) => {
+      this.titleService.setTitle(res);
+    });
   }
 
 }

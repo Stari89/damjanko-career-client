@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { Title } from "@angular/platform-browser";
+import { TranslateService } from '@ngx-translate/core';
 import { UsersService, User } from '../../career-api/users.service';
 
 @Component({
@@ -14,9 +16,19 @@ export class UserComponent implements OnInit {
   public roles = [ 'user', 'admin' ];
   public mode: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private usersService: UsersService, private router: Router) { }
+  constructor(
+    private translate: TranslateService,
+    private titleService: Title,
+    private activatedRoute: ActivatedRoute,
+    private usersService: UsersService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.translate.get('DASHBOARD.USER.TITLE').subscribe((res: string) => {
+      this.titleService.setTitle(res);
+    });
+
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       let param = params.get('id');
       if (param)

@@ -11,7 +11,7 @@ export class UnauthorizedComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private titleService:Title
+    private titleService: Title
   ) { }
 
   ngOnInit() {

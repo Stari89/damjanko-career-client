@@ -1,13 +1,33 @@
 {
     "DASHBOARD": {
-        "APPLICATIONS" : { },
-        "ARTICLES" : { },
-        "CODE-LISTS" : { },
-        "HEADER" : { },
+        "APPLICATIONS" : {
+            "TITLE" : "Applications - career.DamjanKo"
+         },
+        "ARTICLES" : {
+            "TITLE" : "Articles - career.DamjanKo"
+        },
+        "CODE-LISTS" : {
+            "TITLE" : "Code lists - career.DamjanKo"
+        },
+        "HEADER" : {
+            "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
+            "SIGN-OUT" : "Sign Out"
+        },
         "MASTER-DASHBOARD" : { },
-        "SIDEBAR" : { },
-        "USER" : { },
-        "USERS" : { }
+        "SIDEBAR" : {
+            "DASHBOARD" : "Dashboard",
+            "APPLICATIONS" : "Applications",
+            "ARTICLES" : "Articles",
+            "SETTINGS" : "Settings",
+            "USERS" : "Users",
+            "CODE-LISTS" : "Code lists"
+         },
+        "USER" : {
+            "TITLE" : "User - career.DamjanKo"
+        },
+        "USERS" : {
+            "TITLE" : "Users - career.DamjanKo"
+        }
     },
     "PUBLIC" : {
         "MASTER-BLANK" : { },
