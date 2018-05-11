@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 /* services */
 import { AuthenticationService } from '../../career-api/authentication.service';
@@ -11,15 +12,20 @@ import { AuthenticationService } from '../../career-api/authentication.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  public errorMessage;
   public password: string;
-  private unsuccessfulSigninMessage: string = 'Sign-in unsuccessful.'
+  public showErrorMessage: boolean = false;
 
-  constructor(private titleService:Title, private router: Router, private authentication: AuthenticationService) {
-    this.titleService.setTitle("Sign In - carrer.DamjanKo");
-  }
+  constructor (
+    private translate: TranslateService,
+    private titleService: Title,
+    private router: Router,
+    private authentication: AuthenticationService
+  ) {  }
 
   ngOnInit() {
+    this.translate.get('PUBLIC.SIGN-IN.TITLE').subscribe((res: string) => {
+      this.titleService.setTitle(res);
+    });
   }
 
   signin() {
@@ -28,11 +34,11 @@ export class SignInComponent implements OnInit {
         if (authenticated) {
           this.router.navigateByUrl('/');
         } else {
-          this.errorMessage = this.unsuccessfulSigninMessage;
+          this.showErrorMessage = true;
         }
       })
       .catch(error => {
-        this.errorMessage = this.unsuccessfulSigninMessage;
+        this.showErrorMessage = true;
       });
   }
 

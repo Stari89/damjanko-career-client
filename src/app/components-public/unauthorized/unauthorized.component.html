@@ -2,9 +2,9 @@
   <div style="padding: 0 20px;">
     <img class="mb-4" src="assets/logo.svg" alt width="144" height="144">
     <h1>401</h1>
-    <h3 class="h3 mb-3 font-weight-normal">You are not authorized!</h3>
-    <p>You do not have necessary rights to access this content.</p>
-    <a class="btn btn-lg btn-primary text-light" routerLink="/">Take me home</a>
-    <p class="mt-5 mb-3 text-muted">DamjanKo &copy; 2018</p>
+    <h3 class="h3 mb-3 font-weight-normal" translate>PUBLIC.UNAUTHORIZED.YOU-ARE-NOT-AUTHORIZED</h3>
+    <p translate>PUBLIC.UNAUTHORIZED.NO-NECESSARY-RIGHTS</p>
+    <a class="btn btn-lg btn-primary text-light" routerLink="/" translate>PUBLIC.UNAUTHORIZED.TAKE-ME-HOME</a>
+    <p class="mt-5 mb-3 text-muted" [innerHTML]="'PUBLIC.UNAUTHORIZED.DAMJANKO-CR' | translate"></p>
   </div>
 </div>

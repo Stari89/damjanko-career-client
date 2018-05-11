@@ -1,0 +1,46 @@
+{
+    "DASHBOARD": {
+        "APPLICATIONS" : { },
+        "ARTICLES" : { },
+        "CODE-LISTS" : { },
+        "HEADER" : { },
+        "MASTER-DASHBOARD" : { },
+        "SIDEBAR" : { },
+        "USER" : { },
+        "USERS" : { }
+    },
+    "PUBLIC" : {
+        "MASTER-BLANK" : { },
+        "PAGE-NOT-FOUND" : {
+            "TITLE" : "404 Nismo našli strani - carrer.DamjanKo",
+            "OOPS" : "Ups! Zahtevane strani žal nismo našli!",
+            "SOMETHING-WENT-WRONG" : "Morda je šlo kaj narobe ali pa stran, ki jo želite, ne obstaja več.",
+            "TAKE-ME-HOME" : "Želim domov",
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        },
+        "SIGN-IN" : {
+            "TITLE" : "Vpis - carrer.DamjanKo",
+            "PLEASE-SIGN-IN" : "Tukaj se lahko vpišete.",
+            "PASSPHRASE" : "Geslo",
+            "REMEMBER-ME" : "Zapomni si me",
+            "SIGN-IN" : "Vpiši me",
+            "SIGN-IN-UNSUCCESSFUL" : "Vpis ni uspel.",
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        },
+        "UNAUTHORIZED" : {
+            "TITLE" : "401 Nepooblaščen dostop - career.DamjanKo",
+            "YOU-ARE-NOT-AUTHORIZED" : "Niste pooblaščeni za dostop!",
+            "NO-NECESSARY-RIGHTS" : "Nimate potrebnih pravic za dostop do vsebine, ki jo zahtevate.",
+            "TAKE-ME-HOME" : "Želim domov",
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        }
+    },
+    "SIGNED-IN": {
+        "ABOUT" : { },
+        "APPLICATION-LETTER" : { },
+        "CURRICULUM-VITAE" : { },
+        "FOOTER" : { },
+        "HEADER" : { },
+        "MASTER-SIGNED-IN" : { }
+    }
+}

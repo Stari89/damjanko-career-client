@@ -2,9 +2,9 @@
   <div style="padding: 0 20px;">
     <img class="mb-4" src="assets/logo.svg" alt width="144" height="144">
     <h1>404</h1>
-    <h3 class="h3 mb-3 font-weight-normal">Oops! Sorry we can't find that page!</h3>
-    <p>Either something went wrong or the page doesn't exist anymore.</p>
-    <a class="btn btn-lg btn-primary text-light" routerLink="/">Take me home</a>
-    <p class="mt-5 mb-3 text-muted">DamjanKo &copy; 2018</p>
+    <h3 class="h3 mb-3 font-weight-normal" translate>PUBLIC.PAGE-NOT-FOUND.OOPS</h3>
+    <p translate>PUBLIC.PAGE-NOT-FOUND.SOMETHING-WENT-WRONG</p>
+    <a class="btn btn-lg btn-primary text-light" routerLink="/" translate>PUBLIC.PAGE-NOT-FOUND.TAKE-ME-HOME</a>
+    <p class="mt-5 mb-3 text-muted" [innerHTML]="'PUBLIC.PAGE-NOT-FOUND.DAMJANKO-CR' | translate"></p>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-page-not-found',
@@ -8,11 +9,15 @@ import { Title } from "@angular/platform-browser";
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor(private titleService:Title) {
-    this.titleService.setTitle("404 Page Not Found - carrer.DamjanKo");
-  }
+  constructor(
+    private translate: TranslateService,
+    private titleService:Title
+  ) { }
 
   ngOnInit() {
+    this.translate.get('PUBLIC.PAGE-NOT-FOUND.TITLE').subscribe((res: string) => {
+      this.titleService.setTitle(res);
+    });
   }
 
 }

@@ -1,0 +1,46 @@
+{
+    "DASHBOARD": {
+        "APPLICATIONS" : { },
+        "ARTICLES" : { },
+        "CODE-LISTS" : { },
+        "HEADER" : { },
+        "MASTER-DASHBOARD" : { },
+        "SIDEBAR" : { },
+        "USER" : { },
+        "USERS" : { }
+    },
+    "PUBLIC" : {
+        "MASTER-BLANK" : { },
+        "PAGE-NOT-FOUND" : {
+            "TITLE" : "404 Page Not Found - carrer.DamjanKo",
+            "OOPS" : "Oops! Sorry we can't find that page!",
+            "SOMETHING-WENT-WRONG" : "Either something went wrong or the page doesn't exist anymore.",
+            "TAKE-ME-HOME" : "Take me home",
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        },
+        "SIGN-IN" : {
+            "TITLE" : "Sign in - carrer.DamjanKo",
+            "PLEASE-SIGN-IN" : "Please sign in",
+            "PASSPHRASE" : "Passphrase",
+            "REMEMBER-ME" : "Remember me",
+            "SIGN-IN" : "Sign in",
+            "SIGN-IN-UNSUCCESSFUL" : "Sign-in unsuccessful",
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        },
+        "UNAUTHORIZED" : {
+            "TITLE" : "401 Unauthorized - career.DamjanKo",
+            "YOU-ARE-NOT-AUTHORIZED" : "You are not authorized!",
+            "NO-NECESSARY-RIGHTS" : "You do not have necessary rights to access this content.",
+            "TAKE-ME-HOME" : "Take me home",
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        }
+    },
+    "SIGNED-IN": {
+        "ABOUT" : { },
+        "APPLICATION-LETTER" : { },
+        "CURRICULUM-VITAE" : { },
+        "FOOTER" : { },
+        "HEADER" : { },
+        "MASTER-SIGNED-IN" : { }
+    }
+}
