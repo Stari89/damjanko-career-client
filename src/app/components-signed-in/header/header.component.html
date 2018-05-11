@@ -2,26 +2,26 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary">
         <div class="container">
         <img src="assets/logo.svg" style="max-height: 40px; max-width: 40px; margin-right: 10px;" />
-        <a class="navbar-brand" routerLink="/"><small>career.</small>DamjanKo<small>.com</small></a>
+        <a class="navbar-brand" routerLink="/" [innerHTML]="'SIGNED-IN.HEADER.CAREER-DAMJANKO-COM' | translate"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavigation()">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" [class.show]="show" id="navbarCollapse" (click)="toggleNavigation()">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/application-letter" routerLinkActive="active">Application Letter</a>
+              <a class="nav-link" routerLink="/application-letter" routerLinkActive="active" translate>SIGNED-IN.HEADER.APPLICATION-LETTER</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/curriculum-vitae" routerLinkActive="active">Curriculum Vitae</a>
+              <a class="nav-link" routerLink="/curriculum-vitae" routerLinkActive="active" translate>SIGNED-IN.HEADER.CURRICULUM-VITAE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+              <a class="nav-link" routerLink="/about" routerLinkActive="active" translate>SIGNED-IN.HEADER.ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/applications" routerLinkActive="active">Dashboard</a>
+              <a class="nav-link" routerLink="/applications" routerLinkActive="active" translate>SIGNED-IN.HEADER.DASHBOARD</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="signout()" href="" routerLinkActive="active">Sign Out</a>
+              <a class="nav-link" (click)="signout()" href="" routerLinkActive="active" translate>SIGNED-IN.HEADER.SIGN-OUT</a>
             </li>
           </ul>
         </div>

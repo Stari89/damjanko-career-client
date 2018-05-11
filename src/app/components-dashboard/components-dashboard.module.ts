@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 /* modules */
 import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing/app-routing.module';
@@ -16,7 +17,8 @@ import { ApplicationsComponent } from './applications/applications.component';
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   declarations: [
     DashboardRoutingComponents,

@@ -36,11 +36,26 @@
         }
     },
     "SIGNED-IN": {
-        "ABOUT" : { },
-        "APPLICATION-LETTER" : { },
-        "CURRICULUM-VITAE" : { },
-        "FOOTER" : { },
-        "HEADER" : { },
+        "ABOUT" : {
+            "TITLE" : "About - career.DamjanKo"
+        },
+        "APPLICATION-LETTER" : {
+            "TITLE" : "Application letter - career.DamjanKo"
+        },
+        "CURRICULUM-VITAE" : {
+            "TITLE" : "Curriculum Vitae - career.DamjanKo"
+        },
+        "FOOTER" : {
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        },
+        "HEADER" : {
+            "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
+            "APPLICATION-LETTER" : "Application Letter",
+            "CURRICULUM-VITAE" : "Curriculum Vitae",
+            "ABOUT" : "About",
+            "DASHBOARD" : "Dashboard",
+            "SIGN-OUT" : "Sign Out"
+        },
         "MASTER-SIGNED-IN" : { }
     }
 }

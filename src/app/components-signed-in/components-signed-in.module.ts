@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 /* modules */
 import { AppRoutingModule, SignedInRoutingComponents } from '../app-routing/app-routing.module';
@@ -11,7 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule
   ],
   declarations: [
     SignedInRoutingComponents,

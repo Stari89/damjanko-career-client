@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from "@angular/platform-browser";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-curriculum-vitae',
@@ -8,11 +9,15 @@ import { Title } from "@angular/platform-browser";
 })
 export class CurriculumVitaeComponent implements OnInit {
 
-  constructor(private titleService:Title) {
-    this.titleService.setTitle("Curriculum Vitae - carrer.DamjanKo");
-  }
+  constructor(
+    private translate: TranslateService,
+    private titleService:Title
+  ) { }
 
   ngOnInit() {
+    this.translate.get('SIGNED-IN.CURRICULUM-VITAE.TITLE').subscribe((res: string) => {
+      this.titleService.setTitle(res);
+    });
   }
 
 }

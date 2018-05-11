@@ -36,11 +36,26 @@
         }
     },
     "SIGNED-IN": {
-        "ABOUT" : { },
-        "APPLICATION-LETTER" : { },
-        "CURRICULUM-VITAE" : { },
-        "FOOTER" : { },
-        "HEADER" : { },
+        "ABOUT" : {
+            "TITLE" : "O strani - career.DamjanKo"
+        },
+        "APPLICATION-LETTER" : {
+            "TITLE" : "Vloga za delo - career.DamjanKo"
+        },
+        "CURRICULUM-VITAE" : {
+            "TITLE" : "Življenjepis - career.DamjanKo"
+        },
+        "FOOTER" : {
+            "DAMJANKO-CR" : "DamjanKo &copy; 2018"
+        },
+        "HEADER" : {
+            "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
+            "APPLICATION-LETTER" : "Vloga za delo",
+            "CURRICULUM-VITAE" : "Življenjepis",
+            "ABOUT" : "O strani",
+            "DASHBOARD" : "Nadzorna plošča",
+            "SIGN-OUT" : "Izpiši me"
+        },
         "MASTER-SIGNED-IN" : { }
     }
 }
