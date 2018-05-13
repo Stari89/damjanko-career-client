@@ -5,9 +5,16 @@
     <label for="inputPassword" class="sr-only" translate>PUBLIC.SIGN-IN.PASSPHRASE</label>
     <input type="password" id="inputPassword" name="password" class="form-control" [placeholder]="'PUBLIC.SIGN-IN.PASSPHRASE' | translate" required autofocus="" [(ngModel)]="password">
     <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me">&nbsp;<span translate>PUBLIC.SIGN-IN.REMEMBER-ME</span>
-      </label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioEn" value="en" [checked]="currentLang === 'en'" (change)="onLanguageChange('en')">
+            <label class="form-check-label" for="inlineRadio1">
+              <img src="assets/images/ico-united-kingdom.svg" width="23" height="23" />&nbsp;
+              <img src="assets/images/ico-united-states.svg" width="23" height="23" /> EN</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioSi" value="si" [checked]="currentLang === 'si'" (change)="onLanguageChange('si')">
+            <label class="form-check-label" for="inlineRadio2"><img src="assets/images/ico-slovenia.svg" width="23" height="23" /> SI</label>
+          </div>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" translate>PUBLIC.SIGN-IN.SIGN-IN</button>
     <div class="invalid-feedback" *ngIf="showErrorMessage" translate>PUBLIC.SIGN-IN.SIGN-IN-UNSUCCESSFUL</div>

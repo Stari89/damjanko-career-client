@@ -2,3 +2,24 @@
     border-width: 0;
     outline: none;
 }
+.dropdown-menu.right {
+    right: 0;
+    left: auto;
+}
+.user-avatar {
+    max-height: 23px;
+    max-width: 23px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: text-top;
+}
+.user-image {
+    height: 92px;
+    width: 92px;
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}

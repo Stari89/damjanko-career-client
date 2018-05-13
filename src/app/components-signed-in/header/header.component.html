@@ -6,7 +6,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavigation()">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" [class.show]="show" id="navbarCollapse" (click)="toggleNavigation()">
+        <div class="collapse navbar-collapse" [class.show]="showNavigation" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" routerLink="/application-letter" routerLinkActive="active" translate>SIGNED-IN.HEADER.APPLICATION-LETTER</a>
@@ -17,11 +17,33 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="/about" routerLinkActive="active" translate>SIGNED-IN.HEADER.ABOUT</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/applications" routerLinkActive="active" translate>SIGNED-IN.HEADER.DASHBOARD</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="signout()" href="" routerLinkActive="active" translate>SIGNED-IN.HEADER.SIGN-OUT</a>
+            <li class="nav-item dropdown" [class.show]="showDropdown">
+              <a class="nav-link dropdown-toggle cursor-pointer" (click)="toggleDropdown()" style="white-space: nowrap;"><img src="assets/images/ico-user.svg" class="user-avatar" />Celtra d.o.o.</a>
+              <div class="dropdown-menu right" [class.show]="showDropdown">
+                <div class="dropdown-item">
+                  <div class="row vertical-align" style="width: 300px;">
+                    <div class="col-4"><img src="assets/images/ico-user.svg" class="user-image" /></div>
+                    <div class="col-8">Celtra, razvoj<br>informacijskih tehnologij,<br>d.o.o.<br><br>Kongresni trg 3<br>1000 Ljubljana<br>Slovenija</div>
+                  </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioEn" value="en" [checked]="currentLang === 'en'" (change)="onLanguageChange('en')">
+                      <label class="form-check-label" for="inlineRadio1">
+                        <img src="assets/images/ico-united-kingdom.svg" width="23" height="23" />&nbsp;
+                        <img src="assets/images/ico-united-states.svg" width="23" height="23" /> EN</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioSi" value="si" [checked]="currentLang === 'si'" (change)="onLanguageChange('si')">
+                      <label class="form-check-label" for="inlineRadio2"><img src="assets/images/ico-slovenia.svg" width="23" height="23" /> SI</label>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="signout()" href="" routerLinkActive="active" translate>SIGNED-IN.HEADER.SIGN-OUT</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/applications" routerLinkActive="active" translate>SIGNED-IN.HEADER.DASHBOARD</a>
+              </div>
             </li>
           </ul>
         </div>

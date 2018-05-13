@@ -8,6 +8,7 @@ import { AppRoutingModule, SignedInRoutingComponents } from '../app-routing/app-
 /* components */
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserMenuComponent } from './user-menu/user-menu.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     SignedInRoutingComponents,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    UserMenuComponent
   ]
 })
 export class ComponentsSignedInModule { }

@@ -14,6 +14,7 @@ import { AuthenticationService } from '../../career-api/authentication.service';
 export class SignInComponent implements OnInit {
   public password: string;
   public showErrorMessage: boolean = false;
+  public currentLang: string = 'en';
 
   constructor (
     private translate: TranslateService,
@@ -23,6 +24,7 @@ export class SignInComponent implements OnInit {
   ) {  }
 
   ngOnInit() {
+    this.currentLang = this.translate.currentLang;
     this.translate.get('PUBLIC.SIGN-IN.TITLE').subscribe((res: string) => {
       this.titleService.setTitle(res);
     });
@@ -42,4 +44,8 @@ export class SignInComponent implements OnInit {
       });
   }
 
+  onLanguageChange(value: string) {
+    console.log('asdf');
+    this.translate.use(value);
+  }
 }
