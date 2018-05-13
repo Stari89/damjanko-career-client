@@ -22,6 +22,7 @@ export interface User {
   fullName: string;
   address: string;
   password: string;
+  userImagePath: string;
 }
 
 @Injectable()
@@ -38,8 +39,11 @@ export class UsersService {
     return this.apiRequest.get(`${this.usersEndpoint}${userId}/`);
   }
 
-  public createUser(user: User): Observable<UserResponse> {
-    return this.apiRequest.post(this.usersEndpoint, user);
+  public createUser(user: User, userImage: File): Observable<UserResponse> {
+    let formData: FormData = new FormData();
+    formData.append('userImage', userImage);
+    formData.append('user', JSON.stringify(user));
+    return this.apiRequest.post(this.usersEndpoint, formData);
   }
 
   public updateUser(userId: string, user: User): Observable<UserResponse> {

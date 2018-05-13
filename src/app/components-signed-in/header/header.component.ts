@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   public showDropdown: boolean = false;
   public currentLang: string = 'en';
   public signedUser: User;
+  public userImageUrl: string = 'assets/images/ico-user.svg';
 
   constructor(
     private router: Router,
@@ -27,6 +28,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.currentLang = this.translate.currentLang;
     this.signedUser = this.jwtStorage.getSignedUser();
+    let imageUrl = this.jwtStorage.getSignedUserImage();
+    if (imageUrl ) {
+      this.userImageUrl = imageUrl;
+    }
   }
 
   onLanguageChange(value: string) {

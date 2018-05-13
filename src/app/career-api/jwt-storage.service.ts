@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+import { environment } from '../../environments/environment';
 import { User } from './users.service';
 
 @Injectable()
@@ -43,5 +44,12 @@ export class JwtStorageService {
   public destroySignedUser(): void {
     this.signedUser = null;
     localStorage.removeItem(this.signedUserKey);
+  }
+
+  public getSignedUserImage(): string {
+    if (!this.getSignedUser().userImagePath) {
+      return null;
+    }
+    return environment.careerApiEndpointUrl + 'uploads/' + this.getSignedUser().userImagePath;
   }
 }

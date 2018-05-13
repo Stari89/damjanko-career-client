@@ -11,6 +11,7 @@ import { UsersService, User } from '../../career-api/users.service';
 })
 export class UserComponent implements OnInit {
   private userId: string;
+  private userImage: File;
   public user: User = { role: 'user' } as User;
   public errorMessage;
   public roles = [ 'user', 'admin' ];
@@ -47,10 +48,14 @@ export class UserComponent implements OnInit {
     });
   }
 
+  onUserImageChange(files: FileList) {
+    this.userImage = files.item(0);
+  }
+
   onSubmit(close: boolean) {
     switch (this.mode) {
       case 'insert':
-        this.usersService.createUser(this.user).subscribe(
+        this.usersService.createUser(this.user, this.userImage).subscribe(
           userResponse => {
             if (close) {
               this.router.navigateByUrl('/users');
