@@ -1,7 +1,7 @@
 {
     "DASHBOARD": {
         "APPLICATIONS" : {
-            "TITLE" : "Vloge za delo - career.DamjanKo"
+            "TITLE" : "Vloge za zaposlitev - career.DamjanKo"
          },
         "ARTICLES" : {
             "TITLE" : "Članki - career.DamjanKo"
@@ -16,7 +16,7 @@
         "MASTER-DASHBOARD" : { },
         "SIDEBAR" : {
             "DASHBOARD" : "Nadzorna plošča",
-            "APPLICATIONS" : "Vloge za delo",
+            "APPLICATIONS" : "Vloge za zaposlitev",
             "ARTICLES" : "Članki",
             "SETTINGS" : "Nastavitve",
             "USERS" : "Uporabniki",
@@ -60,7 +60,7 @@
             "TITLE" : "O strani - career.DamjanKo"
         },
         "APPLICATION-LETTER" : {
-            "TITLE" : "Vloga za delo - career.DamjanKo"
+            "TITLE" : "Vloga za zaposlitev - career.DamjanKo"
         },
         "CURRICULUM-VITAE" : {
             "TITLE" : "Življenjepis - career.DamjanKo"
@@ -70,7 +70,7 @@
         },
         "HEADER" : {
             "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
-            "APPLICATION-LETTER" : "Vloga za delo",
+            "APPLICATION-LETTER" : "Vloga za zaposlitev",
             "CURRICULUM-VITAE" : "Življenjepis",
             "ABOUT" : "O strani",
             "DASHBOARD" : "Nadzorna plošča",
