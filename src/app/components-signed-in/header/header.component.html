@@ -18,12 +18,16 @@
               <a class="nav-link" routerLink="/about" routerLinkActive="active" translate>SIGNED-IN.HEADER.ABOUT</a>
             </li>
             <li class="nav-item dropdown" [class.show]="showDropdown">
-              <a class="nav-link dropdown-toggle cursor-pointer" (click)="toggleDropdown()" style="white-space: nowrap;"><img src="assets/images/ico-user.svg" class="user-avatar" />Celtra d.o.o.</a>
+              <a class="nav-link dropdown-toggle cursor-pointer" (click)="toggleDropdown()" style="white-space: nowrap;"><img src="assets/images/ico-user.svg" class="user-avatar" />{{ signedUser.name }}</a>
               <div class="dropdown-menu right" [class.show]="showDropdown">
                 <div class="dropdown-item">
                   <div class="row vertical-align" style="width: 300px;">
                     <div class="col-4"><img src="assets/images/ico-user.svg" class="user-image" /></div>
-                    <div class="col-8">Celtra, razvoj<br>informacijskih tehnologij,<br>d.o.o.<br><br>Kongresni trg 3<br>1000 Ljubljana<br>Slovenija</div>
+                    <div class="col-8" >
+                      <span [innerHTML]="signedUser.fullName"></span>
+                      <br /><br />
+                      <span [innerHTML]="signedUser.address"></span>
+                    </div>
                   </div>
                 </div>
                 <div class="dropdown-divider"></div>
@@ -39,10 +43,10 @@
                       <label class="form-check-label" for="inlineRadio2"><img src="assets/images/ico-slovenia.svg" width="23" height="23" /> SI</label>
                     </div>
                 </div>
+                <div class="dropdown-divider" *ngIf="signedUser.role === 'admin'"></div>
+                <a class="dropdown-item" *ngIf="signedUser.role === 'admin'" routerLink="/applications" routerLinkActive="active" translate>SIGNED-IN.HEADER.DASHBOARD</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" (click)="signout()" href="" routerLinkActive="active" translate>SIGNED-IN.HEADER.SIGN-OUT</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/applications" routerLinkActive="active" translate>SIGNED-IN.HEADER.DASHBOARD</a>
               </div>
             </li>
           </ul>

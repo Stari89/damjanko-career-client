@@ -19,6 +19,8 @@ export interface User {
   role: string;
   created: Date;
   updated: Date;
+  fullName: string;
+  address: string;
   password: string;
 }
 
@@ -47,6 +49,12 @@ export class UsersService {
     ]
     if (user.password) {
       data.push( { propName: 'password', value: user.password });
+    }
+    if (user.fullName) {
+      data.push( { propName: 'fullName', value: user.fullName });
+    }
+    if (user.address) {
+      data.push( { propName: 'address', value: user.address });
     }
     return this.apiRequest.patch(`${this.usersEndpoint}${userId}/`, data);
   }

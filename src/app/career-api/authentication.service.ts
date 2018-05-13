@@ -4,10 +4,12 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiRequestService } from './api-request.service';
 import { JwtStorageService } from './jwt-storage.service';
+import { User } from './users.service';
 
 export interface TokenResponse {
   message: string;
   token: string;
+  user: User;
 }
 
 @Injectable()
@@ -24,6 +26,7 @@ export class AuthenticationService {
         .then(
           res => {
             this.jwtStorage.saveToken(res.token);
+            this.jwtStorage.saveSignedUser(res.user);
             resolve(true);
           },
           err =>{
@@ -74,5 +77,6 @@ export class AuthenticationService {
 
   public signout(): void {
     this.jwtStorage.destroyToken();
+    this.jwtStorage.destroySignedUser();
   }
 }

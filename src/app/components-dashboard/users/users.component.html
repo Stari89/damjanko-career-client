@@ -14,6 +14,8 @@
         <th style="width: 3em;"></th>
         <th>User</th>
         <th>Role</th>
+        <th>Full name</th>
+        <th>Address</th>
         <th>Created</th>
         <th>Last modified</th>
       </tr>
@@ -23,6 +25,8 @@
         <td class="text-center"><input type="checkbox"></td>
         <td><a routerLink="/users/{{user._id}}">{{user.name}}</a></td>
         <td>{{user.role}}</td>
+        <td>{{user.fullName}}</td>
+        <td>{{user.address}}</td>
         <td>{{user.created | date: 'short' }}</td>
         <td>{{user.modified | date: 'short'}}</td>
       </tr>
