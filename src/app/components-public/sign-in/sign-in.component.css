@@ -34,3 +34,29 @@
   margin-bottom: -1px;
   margin-bottom: 10px;
 }
+
+.tech-logo-container {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+}
+
+.tech-logo-container .tech-logo {
+  max-height: 40px;
+  margin: 10px;
+  width: 100px;
+}
+@media only screen and (max-width: 720px) {
+  .tech-logo-container .tech-logo {
+    max-height: 30px;
+    margin: 7px;
+    width: 75px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .tech-logo-container .tech-logo {
+    max-height: 20px;
+    margin: 5px;
+    width: 50px;
+  }
+}
