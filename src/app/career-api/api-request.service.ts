@@ -37,6 +37,13 @@ export class ApiRequestService {
       this.getHeaders());
   }
 
+  public put<T>(endpoint: string, data: any): Observable<T> {
+    return this.http.put<T>(
+      this.getCompleteEndpointUrl(endpoint),
+      data,
+      this.getHeaders());
+  }
+
   public delete<T>(endpoint: string): Observable<T> {
     return this.http.delete<T>(
       this.getCompleteEndpointUrl(endpoint),

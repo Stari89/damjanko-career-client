@@ -39,11 +39,8 @@ export class UsersService {
     return this.apiRequest.get(`${this.usersEndpoint}${userId}/`);
   }
 
-  public createUser(user: User, userImage: File): Observable<UserResponse> {
-    let formData: FormData = new FormData();
-    formData.append('userImage', userImage);
-    formData.append('user', JSON.stringify(user));
-    return this.apiRequest.post(this.usersEndpoint, formData);
+  public createUser(user: User): Observable<UserResponse> {
+    return this.apiRequest.post(this.usersEndpoint, user);
   }
 
   public updateUser(userId: string, user: User): Observable<UserResponse> {
@@ -61,6 +58,12 @@ export class UsersService {
       data.push( { propName: 'address', value: user.address });
     }
     return this.apiRequest.patch(`${this.usersEndpoint}${userId}/`, data);
+  }
+
+  public updateUserImage(userId: string, userImage: File): Observable<UserResponse> {
+    let formData: FormData = new FormData();
+    formData.append('userImage', userImage);
+    return this.apiRequest.put(`${this.usersEndpoint}${userId}/`, formData)
   }
 
   public deleteUser(userId: string): Observable<UserResponse> {

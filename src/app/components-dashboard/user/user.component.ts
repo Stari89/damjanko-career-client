@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   private userImage: File;
   public user: User = { role: 'user' } as User;
   public errorMessage;
+  public successMessage;
   public roles = [ 'user', 'admin' ];
   public mode: string;
 
@@ -55,12 +56,29 @@ export class UserComponent implements OnInit {
   onSubmit(close: boolean) {
     switch (this.mode) {
       case 'insert':
-        this.usersService.createUser(this.user, this.userImage).subscribe(
+        this.usersService.createUser(this.user).subscribe(
           userResponse => {
-            if (close) {
-              this.router.navigateByUrl('/users');
+            if (this.userImage) {
+              this.usersService.updateUserImage(userResponse.user._id, this.userImage).subscribe(
+                response => {
+                  if (close) {
+                    this.router.navigateByUrl('/users');
+                  } else {
+                    this.router.navigateByUrl(`/users/${userResponse.user._id}`);
+                    this.successMessage = response.message;
+                  }
+                },
+                error => {
+                  this.errorMessage = error.message;
+                }
+              );
             } else {
-              this.router.navigateByUrl(`/users/${userResponse.user._id}`);
+              if (close) {
+                this.router.navigateByUrl('/users');
+              } else {
+                this.router.navigateByUrl(`/users/${userResponse.user._id}`);
+                this.successMessage = userResponse.message;
+              }
             }
           },
           error => {
@@ -71,9 +89,27 @@ export class UserComponent implements OnInit {
       case 'update':
         this.usersService.updateUser(this.user._id, this.user).subscribe(
           userResponse => {
-            if (close) {
-              this.router.navigateByUrl('/users');
+            if (this.userImage) {
+              this.usersService.updateUserImage(this.user._id, this.userImage).subscribe(
+                response => {
+                  if (close) {
+                    this.router.navigateByUrl('/users');
+                  } else {
+                    this.successMessage = response.message;
+                  }
+                },
+                error => {
+                  this.errorMessage = error.message;
+                }
+              );
+            } else {
+              if (close) {
+                this.router.navigateByUrl('/users');
+              } else {
+                this.successMessage = userResponse.message;
+              }
             }
+
           },
           error => {
             this.errorMessage = error.message;
