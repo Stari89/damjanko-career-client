@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse" [class.show]="showNavigation" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/application-letter" routerLinkActive="active" translate>SIGNED-IN.HEADER.APPLICATION-LETTER</a>
+              <a class="nav-link" routerLink="/application-letter" routerLinkActive="active" (click)="toggleNavigation()" translate>SIGNED-IN.HEADER.APPLICATION-LETTER</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/curriculum-vitae" routerLinkActive="active" translate>SIGNED-IN.HEADER.CURRICULUM-VITAE</a>
+              <a class="nav-link" routerLink="/curriculum-vitae" routerLinkActive="active" (click)="toggleNavigation()" translate>SIGNED-IN.HEADER.CURRICULUM-VITAE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/about" routerLinkActive="active" translate>SIGNED-IN.HEADER.ABOUT</a>
+              <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="toggleNavigation()" translate>SIGNED-IN.HEADER.ABOUT</a>
             </li>
             <li class="nav-item dropdown" [class.show]="showDropdown">
               <a class="nav-link dropdown-toggle cursor-pointer" (click)="toggleDropdown()" style="white-space: nowrap;"><img [src]="userImageUrl" class="user-avatar rounded-circle" />{{ signedUser.name }}</a>
@@ -33,13 +33,13 @@
                 <div class="dropdown-divider"></div>
                 <div class="dropdown-item">
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioEn" value="en" [checked]="currentLang === 'en'" (change)="onLanguageChange('en')">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioEn" value="en" [checked]="currentLang === 'en'" (change)="onLanguageChange('en'); toggleNavigation();">
                       <label class="form-check-label" for="inlineRadio1">
                         <img src="assets/images/ico-united-kingdom.svg" width="23" height="23" />&nbsp;
                         <img src="assets/images/ico-united-states.svg" width="23" height="23" /> EN</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioSi" value="si" [checked]="currentLang === 'si'" (change)="onLanguageChange('si')">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioSi" value="si" [checked]="currentLang === 'si'" (change)="onLanguageChange('si'); toggleNavigation();">
                       <label class="form-check-label" for="inlineRadio2"><img src="assets/images/ico-slovenia.svg" width="23" height="23" /> SI</label>
                     </div>
                 </div>
