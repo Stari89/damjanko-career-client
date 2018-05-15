@@ -6,12 +6,12 @@
         "ARTICLES" : {
             "TITLE" : "Članki - career.DamjanKo"
         },
-        "CODE-LISTS" : {
-            "TITLE" : "Šifranti - career.DamjanKo"
-        },
         "HEADER" : {
             "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
             "SIGN-OUT" : "Izpiši me"
+        },
+        "LOGS" : {
+            "TITLE" : "Zapisi - career.DamjanKo"
         },
         "MASTER-DASHBOARD" : { },
         "SIDEBAR" : {
@@ -20,7 +20,7 @@
             "ARTICLES" : "Članki",
             "SETTINGS" : "Nastavitve",
             "USERS" : "Uporabniki",
-            "CODE-LISTS" : "Šifranti"
+            "LOGS": "Zapisi"
          },
         "USER" : {
             "TITLE" : "Uporabnik - career.DamjanKo"

@@ -6,12 +6,12 @@
         "ARTICLES" : {
             "TITLE" : "Articles - career.DamjanKo"
         },
-        "CODE-LISTS" : {
-            "TITLE" : "Code lists - career.DamjanKo"
-        },
         "HEADER" : {
             "CAREER-DAMJANKO-COM" : "<small>career.</small>DamjanKo<small>.com</small>",
             "SIGN-OUT" : "Sign Out"
+        },
+        "LOGS" : {
+            "TITLE" : "Logs - career.DamjanKo"
         },
         "MASTER-DASHBOARD" : { },
         "SIDEBAR" : {
@@ -20,7 +20,7 @@
             "ARTICLES" : "Articles",
             "SETTINGS" : "Settings",
             "USERS" : "Users",
-            "CODE-LISTS" : "Code lists"
+            "LOGS": "Logs"
          },
         "USER" : {
             "TITLE" : "User - career.DamjanKo"

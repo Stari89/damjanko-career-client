@@ -1,0 +1,30 @@
+<div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+  <h1 class="h2">Logs</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button class="btn btn-sm btn-default" (click)="clearFilter()">Clear filter</button>
+      <button class="btn btn-sm btn-danger" (click)="delete()">Clear logs</button>
+    </div>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Created</th>
+        <th>User</th>
+        <th>Endpoint</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs">
+        <td>{{log.created | date: 'medium' }}</td>
+        <td><a *ngIf="log.user" routerLink="/logs/{{log.user._id}}">{{log.user ? log.user.name : null}}</a></td>
+        <td>{{log.endpoint}}</td>
+        <td>{{log.message}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

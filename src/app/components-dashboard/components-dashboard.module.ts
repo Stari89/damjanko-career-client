@@ -10,8 +10,8 @@ import { AppRoutingModule, DashboardRoutingComponents } from '../app-routing/app
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArticlesComponent } from './articles/articles.component';
-import { CodeListsComponent } from './code-lists/code-lists.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { LogsComponent } from './logs/logs.component';
 
 @NgModule({
   imports: [
@@ -25,8 +25,8 @@ import { ApplicationsComponent } from './applications/applications.component';
     HeaderComponent,
     SidebarComponent,
     ArticlesComponent,
-    CodeListsComponent,
-    ApplicationsComponent
+    ApplicationsComponent,
+    LogsComponent
   ]
 })
 export class ComponentsDashboardModule { }
