@@ -11,7 +11,7 @@ import { LogsService, Log } from '../../career-api/logs.service';
 })
 export class LogsComponent implements OnInit {
   public logs: Log[];
-  private errorMessage;
+  public errorMessage;
 
   constructor(
     private translate: TranslateService,

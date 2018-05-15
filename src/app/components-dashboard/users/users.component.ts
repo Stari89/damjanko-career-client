@@ -10,7 +10,7 @@ import { UsersService, User } from '../../career-api/users.service';
 })
 export class UsersComponent implements OnInit {
   public users: User[];
-  private errorMessage;
+  public errorMessage;
 
   constructor(
     private translate: TranslateService,
