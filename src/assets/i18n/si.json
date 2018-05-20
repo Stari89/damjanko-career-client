@@ -2,7 +2,10 @@
     "DASHBOARD": {
         "APPLICATIONS" : {
             "TITLE" : "Vloge za zaposlitev - career.DamjanKo"
-         },
+        },
+        "ARTICLE" : {
+            "TITLE" : "Članek - career.DamjanKo"
+        },
         "ARTICLES" : {
             "TITLE" : "Članki - career.DamjanKo"
         },

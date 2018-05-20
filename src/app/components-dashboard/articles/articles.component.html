@@ -1,16 +1,33 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+<div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
   <h1 class="h2">Articles</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <button class="btn btn-sm btn-outline-secondary">Share</button>
-      <button class="btn btn-sm btn-outline-secondary">Export</button>
+      <button class="btn btn-sm btn-primary" routerLink="/articles/new">New article</button>
+      <button class="btn btn-sm btn-default">Delete selected</button>
     </div>
-    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-      <span data-feather="calendar"></span>
-      This week
-    </button>
   </div>
 </div>
-<p>
-  articles works!
-</p>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th style="width: 3em;"></th>
+        <th>Article name</th>
+        <th>Language</th>
+        <th>Created</th>
+        <th>Last modified</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td class="text-center"><input type="checkbox"></td>
+        <td><a routerLink="/articles/{{article._id}}">{{article.name}}</a></td>
+        <td>{{article.language}}</td>
+        <td>{{article.created | date: 'short'}}</td>
+        <td>{{article.modified | date: 'short'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

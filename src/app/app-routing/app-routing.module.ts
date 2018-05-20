@@ -18,6 +18,7 @@ import { MasterDashboardComponent } from '../components-dashboard/master-dashboa
 import { UsersComponent } from '../components-dashboard/users/users.component';
 import { UserComponent } from '../components-dashboard/user/user.component';
 import { ArticlesComponent } from '../components-dashboard/articles/articles.component';
+import { ArticleComponent } from '../components-dashboard/article/article.component';
 import { ApplicationsComponent } from '../components-dashboard/applications/applications.component';
 import { LogsComponent } from '../components-dashboard/logs/logs.component';
 
@@ -47,6 +48,8 @@ const routes: Routes = [
 			{ path: 'users/new', component: UserComponent },
 			{ path: 'users/:id', component: UserComponent },
 			{ path: 'users', component: UsersComponent },
+			{ path: 'articles/new', component: ArticleComponent },
+			{ path: 'articles/:id', component: ArticleComponent },
 			{ path: 'articles', component: ArticlesComponent },
 			{ path: 'logs', component: LogsComponent },
 			{ path: 'logs/:id', component: LogsComponent }
@@ -72,5 +75,5 @@ const routes: Routes = [
   })
   export class AppRoutingModule { }
   export const SignedInRoutingComponents = [ MasterSignedInComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent ];
-  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, UserComponent ];
+  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, UserComponent, ArticleComponent ];
   export const PublicRoutingComponents = [ MasterBlankComponent, SignInComponent, UnauthorizedComponent, PageNotFoundComponent ];

@@ -2,7 +2,10 @@
     "DASHBOARD": {
         "APPLICATIONS" : {
             "TITLE" : "Applications - career.DamjanKo"
-         },
+        },
+        "ARTICLE" : {
+            "TITLE" : "Article - career.DamjanKo"
+        },
         "ARTICLES" : {
             "TITLE" : "Articles - career.DamjanKo"
         },
