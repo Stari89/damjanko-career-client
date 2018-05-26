@@ -1,5 +1,8 @@
 {
     "DASHBOARD": {
+        "APPLICATION" : {
+            "TITLE" : "Application - career.DamjanKo"
+        },
         "APPLICATIONS" : {
             "TITLE" : "Applications - career.DamjanKo"
         },

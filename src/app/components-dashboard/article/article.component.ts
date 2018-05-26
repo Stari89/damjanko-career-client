@@ -74,7 +74,7 @@ export class ArticleComponent implements OnInit {
             }
           },
           error => {
-            this.errorMessage = this.errorMessage;
+            this.errorMessage = error.message;
           }
         );
         break;

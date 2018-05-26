@@ -13,6 +13,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ApplicationsComponent } from './applications/applications.component';
 import { LogsComponent } from './logs/logs.component';
 import { ArticleComponent } from './article/article.component';
+import { ApplicationComponent } from './application/application.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { ArticleComponent } from './article/article.component';
     ArticlesComponent,
     ApplicationsComponent,
     LogsComponent,
-    ArticleComponent
+    ArticleComponent,
+    ApplicationComponent
   ]
 })
 export class ComponentsDashboardModule { }

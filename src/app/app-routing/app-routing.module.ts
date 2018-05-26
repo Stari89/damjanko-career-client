@@ -20,6 +20,7 @@ import { UserComponent } from '../components-dashboard/user/user.component';
 import { ArticlesComponent } from '../components-dashboard/articles/articles.component';
 import { ArticleComponent } from '../components-dashboard/article/article.component';
 import { ApplicationsComponent } from '../components-dashboard/applications/applications.component';
+import { ApplicationComponent } from '../components-dashboard/application/application.component';
 import { LogsComponent } from '../components-dashboard/logs/logs.component';
 
 /* services */
@@ -44,6 +45,8 @@ const routes: Routes = [
 		component: MasterDashboardComponent,
 		canActivate: [ RouteAuthenticationGuardService ],
 		children: [
+			{ path: 'applications/new', component: ApplicationComponent},
+			{ path: 'applications/:id', component: ApplicationComponent},
 			{ path: 'applications', component: ApplicationsComponent},
 			{ path: 'users/new', component: UserComponent },
 			{ path: 'users/:id', component: UserComponent },
@@ -75,5 +78,5 @@ const routes: Routes = [
   })
   export class AppRoutingModule { }
   export const SignedInRoutingComponents = [ MasterSignedInComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent ];
-  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, UserComponent, ArticleComponent ];
+  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, UserComponent, ArticleComponent, ApplicationComponent, ApplicationsComponent ];
   export const PublicRoutingComponents = [ MasterBlankComponent, SignInComponent, UnauthorizedComponent, PageNotFoundComponent ];
