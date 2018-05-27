@@ -1,3 +1,4 @@
-<p>
-  about works!
-</p>
+<div class="row flex-md-row">
+  <div class="col-md-4" [innerHTML]="application && application.aboutSideSi && application.aboutSideEn ? (lang === 'si' ? application.aboutSideSi.content : application.aboutSideEn.content) : ''"></div>
+    <div class="col-md-8" [innerHTML]="application && application.aboutMainSi && application.aboutMainEn ? (lang === 'si' ? application.aboutMainSi.content : application.aboutMainEn.content) : ''"></div>
+  </div>

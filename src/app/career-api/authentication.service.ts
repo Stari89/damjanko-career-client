@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiRequestService } from './api-request.service';
 import { JwtStorageService } from './jwt-storage.service';
+import { Application, ApplicationsService } from './applications.service';
 import { User } from './users.service';
 
 export interface TokenResponse {
@@ -17,7 +18,12 @@ export class AuthenticationService {
   private authenticationEndpoint: string = 'authentication/';
   private isAdminEndpoint: string = 'authentication/is-admin/';
 
-  constructor(private apiRequest: ApiRequestService, private jwtStorage: JwtStorageService, private router: Router) { }
+  constructor(
+    private apiRequest: ApiRequestService,
+    private jwtStorage: JwtStorageService,
+    private applicationService: ApplicationsService,
+    private router: Router
+  ) { }
 
   public authenticate(password: string): Promise<boolean> {
     let promise = new Promise<boolean>(resolve => {
@@ -27,7 +33,16 @@ export class AuthenticationService {
           res => {
             this.jwtStorage.saveToken(res.token);
             this.jwtStorage.saveSignedUser(res.user);
-            resolve(true);
+            this.applicationService.getUserApplication().subscribe(
+              applicationResponse => {
+                console.log(applicationResponse);
+                this.jwtStorage.saveUserApplication(applicationResponse.application);
+                resolve(true);
+              },
+              error => {
+                console.log(error.message);
+                resolve(false);
+              });
           },
           err =>{
             resolve(false);
@@ -78,5 +93,6 @@ export class AuthenticationService {
   public signout(): void {
     this.jwtStorage.destroyToken();
     this.jwtStorage.destroySignedUser();
+    this.jwtStorage.destroyUserApplication();
   }
 }

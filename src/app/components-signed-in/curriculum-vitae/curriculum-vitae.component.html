@@ -1,3 +1,4 @@
-<p>
-  curriculum-vitae works!
-</p>
+<div class="row flex-md-row">
+  <div class="col-md-8" [innerHTML]="application && application.curriculumVitaeMainSi && application.curriculumVitaeMainEn ? (lang === 'si' ? application.curriculumVitaeMainSi.content : application.curriculumVitaeMainEn.content) : ''"></div>
+  <div class="col-md-4" [innerHTML]="application && application.curriculumVitaeSideSi && application.curriculumVitaeSideEn ? (lang === 'si' ? application.curriculumVitaeSideSi.content : application.curriculumVitaeSideEn.content) : ''"></div>
+</div>

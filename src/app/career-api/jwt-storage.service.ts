@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { environment } from '../../environments/environment';
 import { User } from './users.service';
+import { Application } from './applications.service';
 
 @Injectable()
 export class JwtStorageService {
@@ -9,6 +10,8 @@ export class JwtStorageService {
   private token: string;
   private readonly signedUserKey: string = 'damjanko_career_signed_user';
   private signedUser: User;
+  private readonly userApplicationKey: string = 'damjanko_career_user_application';
+  private userApplication: Application;
 
   constructor() { }
 
@@ -20,6 +23,11 @@ export class JwtStorageService {
   public saveSignedUser(user: User): void {
     localStorage.setItem(this.signedUserKey, JSON.stringify(user));
     this.signedUser = user;
+  }
+
+  public saveUserApplication(application: Application): void {
+    localStorage.setItem(this.userApplicationKey, JSON.stringify(application));
+    this.userApplication = application;
   }
 
   public getToken(): string {
@@ -36,6 +44,13 @@ export class JwtStorageService {
     return this.signedUser;
   }
 
+  public getUserApplication(): Application {
+    if (!this.userApplication) {
+      this.userApplication = JSON.parse(localStorage.getItem(this.userApplicationKey)) as Application;
+    }
+    return this.userApplication;
+  }
+
   public destroyToken(): void {
     this.token = null;
     localStorage.removeItem(this.tokenKey);
@@ -44,6 +59,11 @@ export class JwtStorageService {
   public destroySignedUser(): void {
     this.signedUser = null;
     localStorage.removeItem(this.signedUserKey);
+  }
+
+  public destroyUserApplication(): void {
+    this.userApplication = null;
+    localStorage.removeItem(this.userApplicationKey);
   }
 
   public getSignedUserImage(): string {
