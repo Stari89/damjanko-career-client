@@ -120,3 +120,6 @@ th.rotate > div {
 	transform: rotate(270deg) translate(-85px, -5px);
 	width: 30px;
 }
+.scroll-x {
+	overflow-x: scroll;
+}
