@@ -13,7 +13,7 @@ import { UsersService, User } from '../../career-api/users.service';
 })
 export class ApplicationComponent implements OnInit {
   private applicationId: string;
-  private application: Application = { active: true } as Application;
+  public application: Application = { active: true } as Application;
   public errorMessage: string;
   public successMessage: string;
   public mode: string;

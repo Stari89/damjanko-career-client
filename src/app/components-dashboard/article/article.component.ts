@@ -11,7 +11,7 @@ import { ArticlesService, Article } from '../../career-api/articles.service';
 })
 export class ArticleComponent implements OnInit {
   private articleId: string;
-  private article: Article = { language: 'en' } as Article;
+  public article: Article = { language: 'en' } as Article;
   public errorMessage: string;
   public successMessage: string;
   public languages = [ 'en', 'si' ];

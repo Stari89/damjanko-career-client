@@ -41,7 +41,7 @@ export class AuthenticationService {
               },
               error => {
                 console.log(error.message);
-                resolve(false);
+                resolve(true);
               });
           },
           err =>{
