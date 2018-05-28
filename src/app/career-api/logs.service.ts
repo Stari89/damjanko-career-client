@@ -13,6 +13,7 @@ export interface LogsResponse {
 export interface Log {
   _id: string;
   created: Date;
+  ip: string;
   user: User;
   endpoint: string;
   message: string;
