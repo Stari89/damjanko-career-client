@@ -1,10 +1,10 @@
 <div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-  <h1 class="h2">Server logs</h1>
+  <h1 class="h2">Client logs</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
       <button class="btn btn-sm btn-default" (click)="clearFilter()">Clear filter</button>
-      <button class="btn btn-sm btn-danger" (click)="delete()">Clear server logs</button>
+      <button class="btn btn-sm btn-danger" (click)="delete()">Clear client logs</button>
     </div>
   </div>
 </div>
@@ -15,17 +15,17 @@
         <th>Created</th>
         <th>IP</th>
         <th>User</th>
-        <th>Endpoint</th>
+        <th>Page</th>
         <th>Message</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let log of logs">
-        <td>{{log.created | date: 'medium' }}</td>
-        <td>{{log.ip}}</td>
-        <td><a *ngIf="log.user" routerLink="/logs/{{log.user._id}}">{{log.user ? log.user.name : null}}</a></td>
-        <td>{{log.endpoint}}</td>
-        <td>{{log.message}}</td>
+      <tr *ngFor="let clientLog of clientLogs">
+        <td>{{clientLog.created | date: 'medium' }}</td>
+        <td><a *ngIf="clientLog.ip" routerLink="/client-logs/{{clientLog.ip}}">{{clientLog.ip}}</a></td>
+        <td>{{clientLog.user ? clientLog.user.name : null}}</td>
+        <td>{{clientLog.page}}</td>
+        <td>{{clientLog.message}}</td>
       </tr>
     </tbody>
   </table>

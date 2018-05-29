@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 /* services */
 import { AuthenticationService } from '../../career-api/authentication.service';
+import { ClientLogsService } from '../../career-api/client-logs.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -20,7 +21,8 @@ export class SignInComponent implements OnInit {
     private translate: TranslateService,
     private titleService: Title,
     private router: Router,
-    private authentication: AuthenticationService
+    private authentication: AuthenticationService,
+    private clientLogsService: ClientLogsService
   ) {  }
 
   ngOnInit() {
@@ -28,24 +30,29 @@ export class SignInComponent implements OnInit {
     this.translate.get('PUBLIC.SIGN-IN.TITLE').subscribe((res: string) => {
       this.titleService.setTitle(res);
     });
+    this.clientLogsService.createLog('Inited page');
   }
 
   signin() {
+    this.clientLogsService.createLog('Clicked sign-in button');
     this.authentication.authenticate(this.password)
       .then(authenticated => {
         if (authenticated) {
+          this.clientLogsService.createLog('Sign-in success');
           this.router.navigateByUrl('/');
         } else {
+          this.clientLogsService.createLog('Sign-in failed');
           this.showErrorMessage = true;
         }
       })
       .catch(error => {
+        this.clientLogsService.createLog('Sign-in failed');
         this.showErrorMessage = true;
       });
   }
 
   onLanguageChange(value: string) {
-    console.log('asdf');
+    this.clientLogsService.createLog('Changed language');
     this.translate.use(value);
   }
 }

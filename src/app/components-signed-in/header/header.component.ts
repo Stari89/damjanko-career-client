@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from '../../career-api/authentication.service';
 import { JwtStorageService } from '../../career-api/jwt-storage.service';
 import { User } from '../../career-api/users.service';
+import { ClientLogsService } from '../../career-api/client-logs.service';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private translate: TranslateService,
     private authentication: AuthenticationService,
-    private jwtStorage: JwtStorageService
+    private jwtStorage: JwtStorageService,
+    private clientLogsService: ClientLogsService
   ) { }
 
   ngOnInit() {
@@ -37,17 +39,21 @@ export class HeaderComponent implements OnInit {
   onLanguageChange(value: string) {
     this.translate.use(value);
     this.toggleDropdown();
+    this.clientLogsService.createLog(`Changed language to ${value}`);
   }
 
   toggleNavigation() {
     this.showNavigation = !this.showNavigation;
+    this.clientLogsService.createLog('Toggled navigation hamburger');
   }
 
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
+    this.clientLogsService.createLog('Toggled navigation dropdown');
   }
 
   signout() {
+    this.clientLogsService.createLog('Signing out');
     this.authentication.signout();
     this.router.navigateByUrl('/');
   }

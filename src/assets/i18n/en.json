@@ -19,6 +19,9 @@
         "LOGS" : {
             "TITLE" : "Server logs - career.DamjanKo"
         },
+        "CLIENT-LOGS" : {
+            "TITLE" : "Client logs - career.DamjanKo"
+        },
         "MASTER-DASHBOARD" : { },
         "SIDEBAR" : {
             "DASHBOARD" : "Dashboard",
@@ -26,7 +29,8 @@
             "ARTICLES" : "Articles",
             "SETTINGS" : "Settings",
             "USERS" : "Users",
-            "LOGS": "Server logs"
+            "LOGS": "Server logs",
+            "CLIENT-LOGS": "Client logs"
          },
         "USER" : {
             "TITLE" : "User - career.DamjanKo"

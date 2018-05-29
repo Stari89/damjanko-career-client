@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { ApiRequestService, UpdateProperty } from './api-request.service';
-
 import { User } from './users.service';
 
 export interface LogsResponse {

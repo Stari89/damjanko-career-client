@@ -4,6 +4,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { JwtStorageService } from '../../career-api/jwt-storage.service';
 import { Application } from '../../career-api/applications.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ClientLogsService } from '../../career-api/client-logs.service';
 
 @Component({
   selector: 'app-application-letter',
@@ -18,7 +19,8 @@ export class ApplicationLetterComponent implements OnInit {
     private translate: TranslateService,
     private titleService:Title,
     private jwtStorageService: JwtStorageService,
-    public domSanitizer: DomSanitizer
+    public domSanitizer: DomSanitizer,
+    private clientLogsService: ClientLogsService
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,6 @@ export class ApplicationLetterComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.lang = event.lang;
     });
+    this.clientLogsService.createLog('Inited page');
   }
-
 }

@@ -3,6 +3,7 @@ import { Title } from "@angular/platform-browser";
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { JwtStorageService } from '../../career-api/jwt-storage.service';
 import { Application } from '../../career-api/applications.service';
+import { ClientLogsService } from '../../career-api/client-logs.service';
 
 @Component({
   selector: 'app-curriculum-vitae',
@@ -16,7 +17,8 @@ export class CurriculumVitaeComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private titleService: Title,
-    private jwtStorageService: JwtStorageService
+    private jwtStorageService: JwtStorageService,
+    private clientLogsService: ClientLogsService
   ) { }
 
   ngOnInit() {
@@ -30,5 +32,6 @@ export class CurriculumVitaeComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.lang = event.lang;
     });
+    this.clientLogsService.createLog('Inited page');
   }
 }

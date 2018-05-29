@@ -19,6 +19,9 @@
         "LOGS" : {
             "TITLE" : "Strežniški zapisi - career.DamjanKo"
         },
+        "CLIENT-LOGS" : {
+            "TITLE" : "Odjemalniški zapisi - career.DamjanKo"
+        },
         "MASTER-DASHBOARD" : { },
         "SIDEBAR" : {
             "DASHBOARD" : "Nadzorna plošča",
@@ -26,7 +29,8 @@
             "ARTICLES" : "Članki",
             "SETTINGS" : "Nastavitve",
             "USERS" : "Uporabniki",
-            "LOGS": "Strežniški zapisi"
+            "LOGS": "Strežniški zapisi",
+            "CLIENT-LOGS": "Odjemalniški zapisi"
          },
         "USER" : {
             "TITLE" : "Uporabnik - career.DamjanKo"

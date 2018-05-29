@@ -22,6 +22,7 @@ import { ArticleComponent } from '../components-dashboard/article/article.compon
 import { ApplicationsComponent } from '../components-dashboard/applications/applications.component';
 import { ApplicationComponent } from '../components-dashboard/application/application.component';
 import { LogsComponent } from '../components-dashboard/logs/logs.component';
+import { ClientLogsComponent } from '../components-dashboard/client-logs/client-logs.component';
 
 /* services */
 import { RouteAuthenticationGuardService } from './route-authentication-guard.service';
@@ -55,7 +56,9 @@ const routes: Routes = [
 			{ path: 'articles/:id', component: ArticleComponent },
 			{ path: 'articles', component: ArticlesComponent },
 			{ path: 'logs', component: LogsComponent },
-			{ path: 'logs/:id', component: LogsComponent }
+			{ path: 'logs/:id', component: LogsComponent },
+			{ path: 'client-logs', component: ClientLogsComponent },
+			{ path: 'client-logs/:ip', component: ClientLogsComponent },
 		]
 	},
 	{
@@ -78,5 +81,5 @@ const routes: Routes = [
   })
   export class AppRoutingModule { }
   export const SignedInRoutingComponents = [ MasterSignedInComponent, ApplicationLetterComponent, CurriculumVitaeComponent, AboutComponent ];
-  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, UserComponent, ArticleComponent, ApplicationComponent, ApplicationsComponent ];
+  export const DashboardRoutingComponents = [ MasterDashboardComponent, UsersComponent, ArticlesComponent, UserComponent, ArticleComponent, ApplicationComponent, ApplicationsComponent, LogsComponent, ClientLogsComponent ];
   export const PublicRoutingComponents = [ MasterBlankComponent, SignInComponent, UnauthorizedComponent, PageNotFoundComponent ];
