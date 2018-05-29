@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary shadow">
-        <div class="container px-0">
+        <div class="container">
         <img src="assets/logo.svg" style="max-height: 40px; max-width: 40px; margin-right: 10px;" />
         <a class="navbar-brand" routerLink="/" [innerHTML]="'SIGNED-IN.HEADER.CAREER-DAMJANKO-COM' | translate"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavigation()">
@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" [class.show]="showNavigation" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/application-letter" routerLinkActive="active" (click)="toggleNavigation()" translate>SIGNED-IN.HEADER.APPLICATION-LETTER</a>
+              <a class="nav-link" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="toggleNavigation()" translate>SIGNED-IN.HEADER.APPLICATION-LETTER</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/curriculum-vitae" routerLinkActive="active" (click)="toggleNavigation()" translate>SIGNED-IN.HEADER.CURRICULUM-VITAE</a>
