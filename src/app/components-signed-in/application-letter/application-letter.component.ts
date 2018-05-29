@@ -3,6 +3,7 @@ import { Title } from "@angular/platform-browser";
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { JwtStorageService } from '../../career-api/jwt-storage.service';
 import { Application } from '../../career-api/applications.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-application-letter',
@@ -16,7 +17,8 @@ export class ApplicationLetterComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private titleService:Title,
-    private jwtStorageService: JwtStorageService
+    private jwtStorageService: JwtStorageService,
+    public domSanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
