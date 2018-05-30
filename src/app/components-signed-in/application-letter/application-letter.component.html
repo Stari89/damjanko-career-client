@@ -1,4 +1,4 @@
 <div class="row flex-md-row-reverse">
-    <div class="col-md-4" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(application && application.applicationLetterSideSi && application.applicationLetterSideEn ? (lang === 'si' ? application.applicationLetterSideSi.content : application.applicationLetterSideEn.content) : '')"></div>
-    <div class="col-md-8" [innerHTML]="application && application.applicationLetterMainSi && application.applicationLetterMainEn ? (lang === 'si' ? application.applicationLetterMainSi.content : application.applicationLetterMainEn.content) : ''"></div>
+    <div class="col-12 col-md-4" [innerHTML]="domSanitizer.bypassSecurityTrustHtml(application && application.applicationLetterSideSi && application.applicationLetterSideEn ? (lang === 'si' ? application.applicationLetterSideSi.content : application.applicationLetterSideEn.content) : '')"></div>
+    <div class="col-12 col-md-8" [innerHTML]="application && application.applicationLetterMainSi && application.applicationLetterMainEn ? (lang === 'si' ? application.applicationLetterMainSi.content : application.applicationLetterMainEn.content) : ''"></div>
 </div>
